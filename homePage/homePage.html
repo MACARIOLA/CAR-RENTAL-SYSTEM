@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="homePage.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <div class="logo">LOGO</div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="another.html">Home</a></li>
+                        <li><a href="another.html">Services</a></li>
+                        <li><a href="another.html">Booking</a></li>
+                        <li><a href="another.html">Cars</a></li>
+                        <li><a href="another.html">Reviews</a></li>
+                        <li><a href="another.html">Contact us</a></li>
+                        <li><a href="another.html" class="btn">Account Name</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <section>
+        <div class="aboutUs">
+            <h1>ABOUT US</h1>
+            <hr
+                style="height: 13px;width:76%;border-width:0;color: maroon;background-color: maroon;margin: -20px; margin-left: -30px;">
+            <hr
+                style="height: 12px;width:78%;border-width:0;color: maroon;background-color: maroon;margin: 24px;  margin-left: -8px">
+            <br><br><br>
+        </div>
+        <div class="content">
+            <img class="car" src="car.png" alt="car">
+            <p id="main">Get behind the wheel of high-performance racing cars and satisfy your need <br> for speed like
+                never before. Whether you're a seasoned racer or a passionate <br> enthusiast, our premier racing car
+                rental service puts you in control of the most <br> powerful and exhilarating vehicles on the market.
+                Get behind the wheel of high <br>performance racing cars and satisfy your need for speed like
+                never before. <br> Whether you're a seasoned racer or a passionate enthusiast, our premier racing <br>
+                car
+                rental service puts you in control of the most powerful and exhilarating vehicles <br> on the market.
+            </p>
+        </div>
+    </section>
+
+    <section class="Developers">
+        <center>
+            <h1 id="sectionDev">DEVELOPERS</h1>
+            <hr style="height: 13px;width:20%;border-width:0;color: maroon;background-color: maroon;margin: -15px;">
+            <hr style="height: 12px;width:17%;border-width:0;color: maroon;background-color: maroon;margin: 20px;">
+            <br><br><br>
+        </center>
+
+        <div class="container">
+            <div class="developer">
+                <center><img src="joshy.jpg" alt="joshy" style="margin-top: -50px;"></center>
+                        <h2>Joshua Alen Lopez</h2>
+                        <p>Front-End Developer <br> Back-End Developer</p>
+            </div>
+            <div class="developer">
+                <center><img src="rald.jpg" alt="rald" style="margin-top: -50px;"></center>
+                <h2>Gerald Authentico</h2>
+                <p>Front-End Developer <br> XML Developer </p>
+            </div>
+            <div class="developer">
+                <center><img src="alobs.jpg" alt="alobs" style="margin-top: -50px;"></center>
+                <h2>John Cedric Aloba</h2>
+                <p>Front-End Developer <br> Database Developer </p>
+            </div>
+            <div class="developer">
+                <center><img src="rycel.jpg" alt="rycel" style="margin-top: -50px;"></center>
+                <h2>John Rycel Mercado</h2>
+                <p>Front-End Developer <br> Database Developer </p>
+            </div>
+            <div class="developer">
+                <center><img src="vnew.jpg" alt="vnew" style="margin-top: -50px;"></center>
+                <h2>Vnew <br> Rodelas</h2>
+                <p>Front-End Developer <br> XML Developer </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="developer1">
+                <center><img src="rol.jpg" alt="rol" style="margin-top: -50px;"></center>
+                <h2>Aerrol Cyle Fernandez</h2>
+                <p>Front-End Developer</p>
+            </div>
+            <div class="developer1">
+                <center><img src="bayson.jpg" alt="bayson" style="margin-top: -50px;"></center>
+                        <h2>Michael Angelo Bayson</h2>
+                        <p>Front-End Developer</p>
+            </div>
+            <div class="developer1">
+                <center><img src="jess.jpg" alt="jess" style="margin-top: -50px;"></center>
+                <h2>Jessalyn Macariola</h2>
+                <p>Front-End Developer</p>
+            </div>
+            <div class="developer1">
+                <center><img src="ferns.jpg" alt="ferns" style="margin-top: -50px;"></center>
+                <h2>Fernalyn Lonquias</h2>
+                <p>Front-End Developer</p>
+            </div>
+            <div class="developer1">
+                <center><img src="kris.jpg" alt="kris" style="margin-top: -50px;"></center>
+                <h2>Maria Kristelle Borre</h2>
+                <p>Front-End Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script>
+        $(window).scroll(function () {
+            if ($(window).scrollTop()) {
+                $("nav").addClass("black");
+            }
+            else {
+                $("nav").removeClass("black");
+            }
+        });
+
+    </script>
+
+</body>
+</html>
