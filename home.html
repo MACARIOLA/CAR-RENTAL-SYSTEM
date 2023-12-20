@@ -35,20 +35,20 @@
     }
 
     .zoom-out-image {
-  transition: transform 0.3s ease-in-out;
-}
+      transition: transform 0.3s ease-in-out;
+    }
 
-.zoom-out-image:hover {
-  transform: scale(1.1);
-}
+    .zoom-out-image:hover {
+      transform: scale(1.1);
+    }
 
-.zoom-in-image {
-  transition: transform 0.3s ease-in-out;
-}
+    .zoom-in-image {
+      transition: transform 0.3s ease-in-out;
+    }
 
-.zoom-in-image:hover {
-  transform: scale(0.9);
-}
+    .zoom-in-image:hover {
+      transform: scale(0.9);
+    }
   </style>
 
   <div class="site-wrap" id="home-section">
@@ -156,7 +156,8 @@
         <div class="row align-items-center">
           <div class="col-lg-7 mb-4 mb-md-0">
             <h2 class="mb-0 text-white">What are you waiting for?</h2>
-            <p class="mb-0 opa-7">Ready to hit the road? Unleash your journey! Get behind the wheel of your dream ride and start exploring today.</p>
+            <p class="mb-0 opa-7">Ready to hit the road? Unleash your journey! Get behind the wheel of your dream ride
+              and start exploring today.</p>
           </div>
           <div class="col-lg-5 text-md-right zoom-out-image">
             <a href="cars.html" class="btn btn-primary btn-white">Rent a car now</a>
@@ -224,8 +225,8 @@
       function scrollToTop() {
         const scrollDuration = 400; // Duration of the scroll animation in milliseconds
         const scrollStep = -window.scrollY / (scrollDuration / 15);
-        
-        const scrollInterval = setInterval(function() {
+
+        const scrollInterval = setInterval(function () {
           if (window.scrollY !== 0) {
             window.scrollBy(0, scrollStep);
           } else {
@@ -233,8 +234,8 @@
           }
         }, 15);
       }
-      
-      window.onscroll = function() {
+
+      window.onscroll = function () {
         const scrollBtn = document.getElementById("scrollBtn");
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
           scrollBtn.style.display = "block";
@@ -242,7 +243,7 @@
           scrollBtn.style.display = "none";
         }
       };
-      </script>
+    </script>
 
   </div>
 
