@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Transaction</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        /* MAIN SIDE ********************************************************************************* */
+        body {
+            background-color: whitesmoke;
+            padding-top: 60px;
+        }
+
+        /* NAVBAR SIDE ********************************************************************************* */
+        .navbar {
+            border-bottom: 3px solid rgb(0, 0, 0, 20%);
+            height: 100px;
+        }
+
+        .navbar-logo {
+            padding-left: 100px;
+            padding-top: 60px;
+            font-weight: bolder;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        /* LEFT SIDE ********************************************************************************* */
+        .left-box {
+            padding-left: 110px;
+            padding-right: 170px;
+        }
+
+        .left-side {
+            height: auto;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.20);
+            border-radius: 15px;
+        }
+
+
+        .payment-image {
+            max-width: 100%;
+            height: auto;
+            margin-right: 5px;
+        }
+
+        .checkbox-container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkbox-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+        }
+
+        .checkbox-container:hover input~.checkmark {
+            background-color: #ddd;
+        }
+
+        .checkbox-container input:checked~.checkmark {
+            background-color: #2196F3;
+            border: 1px solid #2196F3;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .checkbox-container input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .checkbox-container .checkmark:after {
+            left: 10px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-check-input {
+            margin-right: 10px;
+        }
+
+        .form-check-label {
+            display: flex;
+            align-items: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            align-items: center;
+        }
+
+        .payment-method {
+            margin-right: 15px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .payment-image {
+            max-height: 100%;
+            width: auto;
+            max-width: 70%;
+        }
+
+        /* RIGHT SIDE ********************************************************************************* */
+        .right-side {
+            border-radius: 5px;
+            height: 600px;
+            width: 500px;
+            right: 100px;
+            position: fixed;
+        }
+
+        .ticket {
+            height: 500px;
+            background-color: white;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.20);
+        }
+
+        .process-btn {
+            bottom: 0;
+        }
+
+        /* Add any additional styling here */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* NavbarLogo ********************************************************************************* */
+        @media (min-width: 768px) {
+            .navbar-logo {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <p class="navbar-brand navbar-logo">TRANSACTION</p>
+    </nav>
+
+    <!-- CONTENT -->
+    <div class="mt-5 d-flex ">
+
+        <!-- LEFT SIDE -->
+        <div class="left-box col-md-8">
+            <div class="left-side m-2">
+                <div>
+                    <form id="transactionForm">
+                        <!-- CUSTOMER **************************************************** -->
+                        <div class="row mt-3 mb-5">
+
+                            <div class="col-12 mb-1">
+                                <h6>Customer Name</h6>
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="fName" oninput="updateName()" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="mName" oninput="updateName()" class="form-control" placeholder="Middle name">
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="lName" oninput="updateName()" class="form-control" placeholder="Last name">
+                            </div>
+
+                            <div class="col-12 mt-1 mb-1">
+                                <h6>Customer Address</h6>
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="cprovince" oninput="updateName()" class="form-control" placeholder="Province">
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="ccity" oninput="updateName()" class="form-control" placeholder="City">
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="cstreet" oninput="updateName()" class="form-control" placeholder="Street">
+                            </div>
+                            <div class="col-12 mt-1 mb-1">
+                                <h6>Customer Contact</h6>
+                            </div>
+                            <div class="col-6 mb-1">
+                                <input type="email" id="email" oninput="updateName()" class="form-control" placeholder="Email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                    anyone else.</small>
+                            </div>
+                            <div class="col-6 mb-1">
+                                <input type="tel" id="phoneNo" oninput="updateName()" class="form-control" placeholder="Phone No.">
+                            </div>
+                        </div>
+
+                        <!-- PICKUP **************************************************** -->
+                        <div class="row mb-5">
+
+                            <div class="col-12 mb-1">
+                                <h6>Pickup Location</h6>
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="pprovince" oninput="updateName()" class="form-control" placeholder="Province">
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="pcity" oninput="updateName()" class="form-control" placeholder="City">
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="pstreet" oninput="updateName()" class="form-control" placeholder="Street">
+                            </div>
+
+                            <div class="col-12 mt-1 mb-1">
+                                <h6>Pickup Time and Date</h6>
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="date" id="pdate" oninput="updateName()" class="form-control" placeholder="Date">
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="time" id="ptime" oninput="updateName()" class="form-control" placeholder="Time">
+                            </div>
+                        </div>
+
+                        <!-- RETURN **************************************************** -->
+                        <div class="row mb-5">
+
+                            <div class="col-12 mb-1">
+                                <h6>Return Location</h6>
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="rprovince" oninput="updateName()" class="form-control" placeholder="Province">
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="rcity" oninput="updateName()" class="form-control" placeholder="City">
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="text" id="rstreet" oninput="updateName()" class="form-control" placeholder="Street">
+                            </div>
+
+                            <div class="col-12 mt-1 mb-1">
+                                <h6>Return Time and Date</h6>
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="date" id="rdate" oninput="updateName()" class="form-control" placeholder="Province">
+                            </div>
+                            <div class="col-4 mb-1">
+                                <input type="time" id="rtime" oninput="updateName()" class="form-control" placeholder="City">
+                            </div>
+                        </div>
+
+                        <!-- PAYMENT **************************************************** -->
+                        <div class="row mb-5">
+                            <div class="col-12 mb-3">
+                                <h5>Payment Method</h5>
+                            </div>
+                            <div class="col-12 payment-methods ml-1">
+                                <div class="form-check payment-method">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cash"
+                                        value="cash" checked>
+                                    <label class="form-check-label" for="cash">
+                                        <img src="images/cash-image.png" alt="Cash" class="payment-image">
+                                    </label>
+                                </div>
+
+                                <div class="form-check payment-method">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard"
+                                        value="creditCard">
+                                    <label class="form-check-label" for="creditCard">
+                                        <img src="images/credit-card-image.png" alt="Credit Card" class="payment-image">
+                                    </label>
+                                </div>
+
+                                <div class="form-check payment-method">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="paypal"
+                                        value="paypal">
+                                    <label class="form-check-label" for="paypal">
+                                        <img src="images/paypal-image.png" alt="Paypal" class="payment-image">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TERM & CONDITION ****************************************** -->
+                        <!-- BUTTON **************************************************** -->
+                        <div class="row">
+                            <div class="col mb-2">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="termsCheckbox" required>
+                                    <span class="checkmark"></span>
+                                    I have read and agree to the Terms and Conditions.
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row justify-content-end mb-5">
+                            <div class="col-2">
+                                <a href="services.html">
+                                    <button type="button" class="btn btn-dark">Back</button>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right SIDE -->
+        <div class="right-side col-md-6">
+            <div class="ticket m-2">
+                <h3>TICKET</h3>
+                <table>
+                    <div class="row align-items-center bg-danger mr-1 ml-1">
+                        <div>
+                            <img src="images/ford.jpg" class="img-fluid" style="height: 110px; padding: 10px;">
+                        </div>
+                        <div>
+                            <h5 class="ml-4">Mustang Shelby GT500</h5>
+                            <h6 class="ml-4">Ammount: ₱3,500</h6>
+                        </div>
+                    </div>
+                    <tr>
+                        <td id="ticketName">Name: </td>
+                    </tr>
+                    <tr>
+                        <td id="ticketAddress">Customer Address: </td>
+                    </tr>
+                    <tr>
+                        <td id="ticketPickupAddress">Pickup Location</td>
+                    </tr>
+                    <tr>
+                        <td id="ticketPickup">Day and Time</td>
+                    </tr>
+                    <tr>
+                        <td id="ticketReturnAddress">Return Location</td>
+                    </tr>
+                    <tr>
+                        <td id="ticketReturn">Day and Time</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="process-btn m-2 row justify-content-end">
+                <a href="#">
+                    <button type="submit" class="btn btn-success">Proceed</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateName() {
+            var firstName = document.getElementById('fName').value;
+            var middleName = document.getElementById('mName').value;
+            var lastName = document.getElementById('lName').value;
+            var cprovince = document.getElementById('cprovince').value;
+            var ccity = document.getElementById('ccity').value;
+            var cstreet = document.getElementById('cstreet').value;
+            var email = document.getElementById('email').value;
+            var phoneNo = document.getElementById('phoneNo').value;
+            var pprovince = document.getElementById('pprovince').value;
+            var pcity = document.getElementById('pcity').value;
+            var pstreet = document.getElementById('pstreet').value;
+            var pdate = document.getElementById('pdate').value;
+            var ptime = document.getElementById('ptime').value;
+            var rprovince = document.getElementById('rprovince').value;
+            var rcity = document.getElementById('rcity').value;
+            var rstreet = document.getElementById('rstreet').value;
+            var rdate = document.getElementById('rdate').value;
+            var rtime = document.getElementById('rtime').value;
+
+            var fullName = firstName + ' ' + (middleName ? middleName + ' ' : '') + lastName;
+            document.getElementById('ticketName').textContent = fullName;
+            document.getElementById('ticketContact').textContent = email + " " + phoneNo;
+            document.getElementById('ticketAddress').textContent = cprovince + " " + ccity + " " + cstreet;
+            document.getElementById('ticketPickupAddress').textContent = pprovince + " " + pcity + " " + pstreet;
+            document.getElementById('ticketPickup').textContent =  pdate + " " + ptime;
+            document.getElementById('ticketReturnAddress').textContent = rprovince + " " + rcity + " " + rstreet;
+            document.getElementById('ticketReturn').textContent = rdate + " " + rtime;
+        }
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
