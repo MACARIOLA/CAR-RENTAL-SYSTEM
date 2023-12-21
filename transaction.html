@@ -2,424 +2,459 @@
 <html lang="en">
 
 <head>
-    <title>Transaction</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>ImperialDrive | Transaction</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+
+    <!---------------- Main CSS ---------------->
+    <link rel="stylesheet" href="css/style.css" />
+
     <style>
-        /* MAIN SIDE ********************************************************************************* */
         body {
-            background-color: whitesmoke;
-            padding-top: 60px;
+            margin-top: 50px;
         }
 
-        /* NAVBAR SIDE ********************************************************************************* */
-        .navbar {
-            border-bottom: 3px solid rgb(0, 0, 0, 20%);
-            height: 100px;
-        }
-
-        .navbar-logo {
-            padding-left: 100px;
-            padding-top: 60px;
-            font-weight: bolder;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-size: 25px;
-        }
-
-        /* LEFT SIDE ********************************************************************************* */
-        .left-box {
-            padding-left: 110px;
-            padding-right: 170px;
-        }
-
-        .left-side {
-            height: auto;
-            background-color: white;
-            padding: 10px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.20);
-            border-radius: 15px;
-        }
-
-
-        .payment-image {
-            max-width: 100%;
-            height: auto;
-            margin-right: 5px;
-        }
-
-        .checkbox-container {
-            display: block;
-            position: relative;
-            padding-left: 35px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .checkbox-container input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .checkmark {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 25px;
-            width: 25px;
-            background-color: #eee;
-            border: 1px solid #ccc;
-        }
-
-        .checkbox-container:hover input~.checkmark {
-            background-color: #ddd;
-        }
-
-        .checkbox-container input:checked~.checkmark {
-            background-color: #2196F3;
-            border: 1px solid #2196F3;
-        }
-
-        .checkmark:after {
-            content: "";
-            position: absolute;
-            display: none;
-        }
-
-        .checkbox-container input:checked~.checkmark:after {
-            display: block;
-        }
-
-        .checkbox-container .checkmark:after {
-            left: 10px;
-            top: 5px;
-            width: 5px;
-            height: 10px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-
-        .form-check {
-            display: flex;
-            align-items: center;
-        }
-
-        .form-check-input {
-            margin-right: 10px;
-        }
-
-        .form-check-label {
-            display: flex;
-            align-items: center;
-        }
-
-        .payment-methods {
-            display: flex;
-            align-items: center;
-        }
-
-        .payment-method {
-            margin-right: 15px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-        }
-
-        .payment-image {
-            max-height: 100%;
-            width: auto;
-            max-width: 70%;
-        }
-
-        /* RIGHT SIDE ********************************************************************************* */
-        .right-side {
-            border-radius: 5px;
-            height: 600px;
-            width: 500px;
-            right: 100px;
+        .site-navbar {
             position: fixed;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .transaction-box {
+            background-color: white;
+            box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(0, 123, 225, 0.5);
+            ;
+            padding: 50px;
+            border-radius: 5px;
+        }
+
+        .form-row {
+            border-bottom: 2px solid rgb(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        .car-list-card {
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.7),
+                8px 8px 0 0 rgba(0, 123, 255, 0.3);
         }
 
         .ticket {
-            height: 500px;
+            box-shadow: rgba(0, 123, 225, 0.4) 0px 0px 0px 2px, rgba(0, 123, 225, 0.65) 0px 4px 6px -1px, rgba(0, 123, 255, 0.08) 0px 1px 0px inset;
+            border-radius: 10px;
+            height: 240px;
+            padding: 5px;
             background-color: white;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.20);
+            color: black;
         }
 
-        .process-btn {
-            bottom: 0;
+        .ticket-price {
+            color: black;
+            font-weight: bolder;
         }
 
-        /* Add any additional styling here */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        .ticket-title {
+            color: black;
+            font-style: italic;
+            font-weight: bolder;
         }
 
-        th, td {
-            text-align: left;
-            padding: 8px;
+        .ticket-label-row {
+            width: 80px;
         }
 
-        th {
-            background-color: #f2f2f2;
+        .ticket-label-2 {
+            color: black;
+            font-weight: bolder;
+            width: 80px;
         }
 
-        /* NavbarLogo ********************************************************************************* */
-        @media (min-width: 768px) {
-            .navbar-logo {
-                margin-right: 0;
-            }
+        .ticket-label,
+        .transaction-form-titles {
+            color: black;
+            font-weight: bolder;
+        }
+
+        .zoom-out-image {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .zoom-out-image:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <p class="navbar-brand navbar-logo">TRANSACTION</p>
-    </nav>
-
-    <!-- CONTENT -->
-    <div class="mt-5 d-flex ">
-
-        <!-- LEFT SIDE -->
-        <div class="left-box col-md-8">
-            <div class="left-side m-2">
-                <div>
-                    <form id="transactionForm">
-                        <!-- CUSTOMER **************************************************** -->
-                        <div class="row mt-3 mb-5">
-
-                            <div class="col-12 mb-1">
-                                <h6>Customer Name</h6>
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="fName" oninput="updateName()" class="form-control" placeholder="First name">
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="mName" oninput="updateName()" class="form-control" placeholder="Middle name">
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="lName" oninput="updateName()" class="form-control" placeholder="Last name">
-                            </div>
-
-                            <div class="col-12 mt-1 mb-1">
-                                <h6>Customer Address</h6>
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="cprovince" oninput="updateName()" class="form-control" placeholder="Province">
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="ccity" oninput="updateName()" class="form-control" placeholder="City">
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="cstreet" oninput="updateName()" class="form-control" placeholder="Street">
-                            </div>
-                            <div class="col-12 mt-1 mb-1">
-                                <h6>Customer Contact</h6>
-                            </div>
-                            <div class="col-6 mb-1">
-                                <input type="email" id="email" oninput="updateName()" class="form-control" placeholder="Email">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                    anyone else.</small>
-                            </div>
-                            <div class="col-6 mb-1">
-                                <input type="tel" id="phoneNo" oninput="updateName()" class="form-control" placeholder="Phone No.">
-                            </div>
+    <div class="site-wrap" id="home-section">
+        <!--------------------- NAVBAR --------------------->
+        <header class="site-navbar site-navbar-target" role="banner">
+            <div class="container">
+                <div class="row align-items-center position-relative">
+                    <div class="col-3">
+                        <div class="site-logo">
+                            <a href="home.html" class="d-flex align-items-center">
+                                <img src="./images/idlogo.png" alt="IDLogo" class="img-fluid col-3 zoom-out-image" />
+                            </a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--------------------- NAVBAR END --------------------->
 
-                        <!-- PICKUP **************************************************** -->
-                        <div class="row mb-5">
+        <!--------------------- CONTENT --------------------->
+        <div class="container">
+            <div class="site-section">
+                <div class="row d-flex">
+                    <!-- LEFT BOX -->
+                    <div class="transaction-box col-md-6 col-lg-6">
+                        <!-- Transaction -->
+                        <form id="transactionForm">
 
-                            <div class="col-12 mb-1">
-                                <h6>Pickup Location</h6>
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="pprovince" oninput="updateName()" class="form-control" placeholder="Province">
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="pcity" oninput="updateName()" class="form-control" placeholder="City">
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="pstreet" oninput="updateName()" class="form-control" placeholder="Street">
-                            </div>
-
-                            <div class="col-12 mt-1 mb-1">
-                                <h6>Pickup Time and Date</h6>
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="date" id="pdate" oninput="updateName()" class="form-control" placeholder="Date">
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="time" id="ptime" oninput="updateName()" class="form-control" placeholder="Time">
-                            </div>
-                        </div>
-
-                        <!-- RETURN **************************************************** -->
-                        <div class="row mb-5">
-
-                            <div class="col-12 mb-1">
-                                <h6>Return Location</h6>
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="rprovince" oninput="updateName()" class="form-control" placeholder="Province">
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="rcity" oninput="updateName()" class="form-control" placeholder="City">
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="text" id="rstreet" oninput="updateName()" class="form-control" placeholder="Street">
-                            </div>
-
-                            <div class="col-12 mt-1 mb-1">
-                                <h6>Return Time and Date</h6>
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="date" id="rdate" oninput="updateName()" class="form-control" placeholder="Province">
-                            </div>
-                            <div class="col-4 mb-1">
-                                <input type="time" id="rtime" oninput="updateName()" class="form-control" placeholder="City">
-                            </div>
-                        </div>
-
-                        <!-- PAYMENT **************************************************** -->
-                        <div class="row mb-5">
-                            <div class="col-12 mb-3">
-                                <h5>Payment Method</h5>
-                            </div>
-                            <div class="col-12 payment-methods ml-1">
-                                <div class="form-check payment-method">
-                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cash"
-                                        value="cash" checked>
-                                    <label class="form-check-label" for="cash">
-                                        <img src="images/cash-image.png" alt="Cash" class="payment-image">
-                                    </label>
+                            <!-- PERSONAL INFO -->
+                            <div class="form-row">
+                                <div class="col-12 mb-3">
+                                    <h3 class="transaction-form-titles">Personal Information</h3>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="fname" placeholder="First Name"
+                                        oninput="updateName()" required />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="mname" placeholder="Middle Name"
+                                        oninput="updateName()" required />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="lname" placeholder="Last Name"
+                                        oninput="updateName()" required />
                                 </div>
 
-                                <div class="form-check payment-method">
-                                    <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard"
-                                        value="creditCard">
-                                    <label class="form-check-label" for="creditCard">
-                                        <img src="images/credit-card-image.png" alt="Credit Card" class="payment-image">
-                                    </label>
+                                <div class="form-group col-md-6">
+                                    <input type="email" class="form-control" id="email" placeholder="Email"
+                                        oninput="updateName()" required />
                                 </div>
-
-                                <div class="form-check payment-method">
-                                    <input class="form-check-input" type="radio" name="paymentMethod" id="paypal"
-                                        value="paypal">
-                                    <label class="form-check-label" for="paypal">
-                                        <img src="images/paypal-image.png" alt="Paypal" class="payment-image">
-                                    </label>
+                                <div class="form-group col-md-6">
+                                    <input type="tel" class="form-control" id="phoneNo" placeholder="Phone No."
+                                        oninput="updateName()" required />
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- TERM & CONDITION ****************************************** -->
-                        <!-- BUTTON **************************************************** -->
-                        <div class="row">
-                            <div class="col mb-2">
-                                <label class="checkbox-container">
-                                    <input type="checkbox" id="termsCheckbox" required>
-                                    <span class="checkmark"></span>
-                                    I have read and agree to the Terms and Conditions.
-                                </label>
+                            <!-- PICKUP LOCATION/DateTime -->
+                            <div class="form-row">
+                                <div class="col-12 mt-3 mb-3">
+                                    <h3 class="transaction-form-titles">Pickup Information</h3>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="p_province" placeholder="Province"
+                                        oninput="updateName()" required />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="p_city" placeholder="City"
+                                        oninput="updateName()" required />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="p_zipcode" placeholder="ZipCode"
+                                        oninput="updateName()" required />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="returnDateTime">Date/Time</label>
+                                    <input type="datetime-local" class="form-control" id="p_dateTime"
+                                        oninput="updateName()" required />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row justify-content-end mb-5">
-                            <div class="col-2">
-                                <a href="services.html">
-                                    <button type="button" class="btn btn-dark">Back</button>
-                                </a>
+
+                            <!-- RETURN LOCATION/DateTime -->
+                            <div class="form-row">
+                                <div class="col-12 mt-3 mb-3">
+                                    <h3 class="transaction-form-titles">Return Information</h3>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="r_province" placeholder="Province"
+                                        oninput="updateName()" required />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="r_city" placeholder="City"
+                                        oninput="updateName()" required />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="r_zipcode" placeholder="ZipCode"
+                                        oninput="updateName()" required />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="returnDateTime">Date/Time</label>
+                                    <input type="datetime-local" class="form-control" id="r_dateTime"
+                                        oninput="updateName()" required />
+                                </div>
                             </div>
+
+                            <!-- PAYMENT METHOD -->
+                            <div class="form-row">
+                                <div class="col-12 mt-3 mb-3">
+                                    <h3 class="transaction-form-titles">Payment Information</h3>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="paymentMethod">Payment Method</label>
+                                    <select class="form-control" id="paymentMethod" oninput="updateName()" required>
+                                        <option value="cash">Cash</option>
+                                        <option value="creditCard">Credit Card</option>
+                                        <option value="paypal">Paypal</option>
+                                        <option value="gcash">GCash</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="returnZipCode">Payment Amount</label>
+                                    <input type="text" class="form-control" id="amount" placeholder="₱"
+                                        oninput="updateName()" required />
+                                </div>
+                            </div>
+
+                            <!-- BUTTONS -->
+                            <div class="mt-5">
+                                <div class="row">
+                                    <div class="form-group col-md-12 d-flex justify-content-end">
+                                        <button type="button" class="btn btn-outline-secondary">Back</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <!-- RIGHT BOX -->
+                    <div class="col-md-6 col-lg-6">
+                        <div class="position-fixed">
+
+                            <!-- Car Selected -->
+                            <div class="col-md-12 col-lg-12">
+                                <div class="car-list-card listing d-block align-items-stretch">
+                                    <div class="d-md-flex">
+                                        <div class="listing-img h-100 mr-4">
+                                            <img src="images/car_6.jpg" alt="Image" class="img-fluid zoom-out-image" />
+                                        </div>
+                                        <div class="listing-contents h-100">
+                                            <h3>Mitsubishi Pajero</h3>
+                                            <div class="rent-price">
+                                                <strong>₱820.00</strong><span class="mx-1">/</span>day
+                                            </div>
+                                            <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                                                <div class="listing-feature pr-4">
+                                                    <span class="caption">Luggage:</span>
+                                                    <span class="number">8</span>
+                                                </div>
+                                                <div class="listing-feature pr-4">
+                                                    <span class="caption">Doors:</span>
+                                                    <span class="number">4</span>
+                                                </div>
+                                                <div class="listing-feature pr-4">
+                                                    <span class="caption">Passenger:</span>
+                                                    <span class="number">4</span>
+                                                </div>
+                                            </div>
+                                            <div class="mt-5">
+                                                <div class="row">
+                                                    <div class="form-group col-md-12 d-flex justify-content-end">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary">Proceed</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ticket -->
+                            <div class="col-md-12 col-lg-12">
+                                <div class="ticket">
+                                    <div class="row d-md-flex">
+                                        <div class="col-10 listing-contents pl-4">
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <h2 class="ticket-price">PRICE: ₱820.00</h2>
+                                                </div>
+                                                <div class="col-4">
+                                                    <h2 class="ticket-title">TICKET</h2>
+                                                </div>
+                                            </div>
+                                            <table>
+                                                <tr>
+                                                    <td class="ticket-label-2">
+                                                        Name:
+                                                    </td>
+                                                    <td class="ticket-text" id="cust_name"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ticket-label-2">
+                                                        Amount:
+                                                    </td>
+                                                    <td class="ticket-text" id="cust_amount"></td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <tr>
+                                                    <td class="ticket-label-row">
+                                                        <div class="row d-flex">
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="col-12 ticket-label">
+                                                                        PICKUP:
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="col-12 ticket-label">
+                                                                        PICKUP:
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="col-12 ticket-label">
+                                                                        RETURN:
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="col-12 ticket-label">
+                                                                        RETURN:
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row d-flex">
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="ticket-text col-4" id="pickup_province">
+                                                                        Province
+                                                                    </div>
+                                                                    <div class="ticket-text col-4" id="pickup_city">
+                                                                        City
+                                                                    </div>
+                                                                    <div class="ticket-text col-4" id="pickup_zipcode">
+                                                                        ZipCode
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="ticket-text col-12"
+                                                                        id="pickup_dateTime">
+                                                                        Date/Time
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="ticket-text col-4" id="return_province">
+                                                                        Province
+                                                                    </div>
+                                                                    <div class="ticket-text col-4" id="return_city">
+                                                                        City
+                                                                    </div>
+                                                                    <div class="ticket-text col-4" id="return_zipcode">
+                                                                        ZipCode
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="row">
+                                                                    <div class="ticket-text col-12"
+                                                                        id="return_dateTime">
+                                                                        Date/Time
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                    </form>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-        <!-- Right SIDE -->
-        <div class="right-side col-md-6">
-            <div class="ticket m-2">
-                <h3>TICKET</h3>
-                <table>
-                    <div class="row align-items-center bg-danger mr-1 ml-1">
-                        <div>
-                            <img src="images/ford.jpg" class="img-fluid" style="height: 110px; padding: 10px;">
-                        </div>
-                        <div>
-                            <h5 class="ml-4">Mustang Shelby GT500</h5>
-                            <h6 class="ml-4">Ammount: ₱3,500</h6>
-                        </div>
-                    </div>
-                    <tr>
-                        <td id="ticketName">Name: </td>
-                    </tr>
-                    <tr>
-                        <td id="ticketAddress">Customer Address: </td>
-                    </tr>
-                    <tr>
-                        <td id="ticketPickupAddress">Pickup Location</td>
-                    </tr>
-                    <tr>
-                        <td id="ticketPickup">Day and Time</td>
-                    </tr>
-                    <tr>
-                        <td id="ticketReturnAddress">Return Location</td>
-                    </tr>
-                    <tr>
-                        <td id="ticketReturn">Day and Time</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="process-btn m-2 row justify-content-end">
-                <a href="#">
-                    <button type="submit" class="btn btn-success">Proceed</button>
-                </a>
-            </div>
-        </div>
+        <!--------------------- CONTENT END --------------------->
     </div>
 
     <script>
         function updateName() {
-            var firstName = document.getElementById('fName').value;
-            var middleName = document.getElementById('mName').value;
-            var lastName = document.getElementById('lName').value;
-            var cprovince = document.getElementById('cprovince').value;
-            var ccity = document.getElementById('ccity').value;
-            var cstreet = document.getElementById('cstreet').value;
-            var email = document.getElementById('email').value;
-            var phoneNo = document.getElementById('phoneNo').value;
-            var pprovince = document.getElementById('pprovince').value;
-            var pcity = document.getElementById('pcity').value;
-            var pstreet = document.getElementById('pstreet').value;
-            var pdate = document.getElementById('pdate').value;
-            var ptime = document.getElementById('ptime').value;
-            var rprovince = document.getElementById('rprovince').value;
-            var rcity = document.getElementById('rcity').value;
-            var rstreet = document.getElementById('rstreet').value;
-            var rdate = document.getElementById('rdate').value;
-            var rtime = document.getElementById('rtime').value;
+            var firstName = document.getElementById("fname").value;
+            var middleName = document.getElementById("mname").value;
+            var lastName = document.getElementById("lname").value;
+            var amount = document.getElementById("amount").value;
 
-            var fullName = firstName + ' ' + (middleName ? middleName + ' ' : '') + lastName;
-            document.getElementById('ticketName').textContent = fullName;
-            document.getElementById('ticketContact').textContent = email + " " + phoneNo;
-            document.getElementById('ticketAddress').textContent = cprovince + " " + ccity + " " + cstreet;
-            document.getElementById('ticketPickupAddress').textContent = pprovince + " " + pcity + " " + pstreet;
-            document.getElementById('ticketPickup').textContent =  pdate + " " + ptime;
-            document.getElementById('ticketReturnAddress').textContent = rprovince + " " + rcity + " " + rstreet;
-            document.getElementById('ticketReturn').textContent = rdate + " " + rtime;
+            var pprovince = document.getElementById("p_province").value;
+            var pcity = document.getElementById("p_city").value;
+            var pzipcode = document.getElementById("p_zipcode").value;
+            var pdateTime = document.getElementById("p_dateTime").value;
+
+            var rprovince = document.getElementById("r_province").value;
+            var rcity = document.getElementById("r_city").value;
+            var rzipcode = document.getElementById("r_zipcode").value;
+            var rdateTime = document.getElementById("r_dateTime").value;
+
+            var fullName =
+                firstName + " " + (middleName ? middleName + " " : "") + lastName;
+
+            document.getElementById("cust_name").textContent = fullName;
+            document.getElementById("cust_amount").textContent = " " + "₱" + amount;
+            document.getElementById("pickup_province").textContent =
+                " " + pprovince;
+            document.getElementById("pickup_city").textContent = " " + pcity;
+            document.getElementById("pickup_zipcode").textContent = " " + pzipcode;
+
+            document.getElementById("return_province").textContent =
+                " " + rprovince;
+            document.getElementById("return_city").textContent = " " + rcity;
+            document.getElementById("return_zipcode").textContent = " " + rzipcode;
+
+            document.getElementById("pickup_dateTime").textContent =
+                " " + pdateTime;
+
+            document.getElementById("return_dateTime").textContent =
+                " " + rdateTime;
         }
     </script>
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <!---------------- Scripts ---------------->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
