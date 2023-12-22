@@ -38,17 +38,16 @@
             background-color: white;
             box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.5);
             border: 2px solid rgba(0, 123, 225, 0.5);
-            ;
             padding: 50px;
             border-radius: 5px;
         }
 
         #custName_row {
-            width: 125px;
+            width: 95px;
         }
 
         .location_row {
-            width: 180px;
+            width: 175px;
         }
 
         .zipcode_row {
@@ -123,8 +122,11 @@
 
         .ticket-label-2 {
             color: black;
-            font-weight: bolder;
             width: 80px;
+        }
+
+        .ticketLabel {
+            padding-right: 8px;
         }
 
         .ticket-label,
@@ -410,7 +412,7 @@
                                     </table>
                                     <table>
                                         <tr>
-                                            <td>
+                                            <td class="ticketLabel">
                                                 Pickup Place:
                                             </td>
                                             <td class="location_row" id="pickup_province">Province</td>
@@ -418,13 +420,13 @@
                                             <td class="zipcode_row" id="pickup_zipcode">Zipcode</td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                Pickup Date/Time:
+                                            <td class="ticketLabel">
+                                                Date/Time:
                                             </td>
-                                            <td id="pickup_dateTime"></td>
+                                            <td class="location_row" id="pickup_dateTime"></td>
                                         </tr>
                                         <tr>
-                                            <td>
+                                            <td class="ticketLabel">
                                                 Return Place:
                                             </td>
                                             <td class="location_row" id="return_province">Province</td>
@@ -432,8 +434,8 @@
                                             <td class="zipcode_row" id="return_zipcode">Zipcode</td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                Return Date/Time:
+                                            <td class="ticketLabel">
+                                                Date/Time:
                                             </td>
                                             <td><div id="return_dateTime"></div></td>
                                         </tr>
