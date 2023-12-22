@@ -43,6 +43,50 @@
             border-radius: 5px;
         }
 
+        #custName_row {
+            width: 125px;
+        }
+
+        .location_row {
+            width: 180px;
+        }
+
+        .zipcode_row {
+            width: 100px;
+        }
+
+        .card-information-holder {
+            border: 2px solid rgba(0, 0, 0, 0.301);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .cardTitle {
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-weight: bolder;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .qrBox {
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            height: 350px;
+            width: 330px;
+        }
+
+        .gcashQrCode {
+            border: 5px solid #297bfa;
+            padding: 10px;
+        }
+
+        .mayaQrCode {
+            border: 5px solid #459c5d;
+            padding: 10px;
+        }
+
         .form-row {
             border-bottom: 2px solid rgb(0, 0, 0, 0.2);
             margin-bottom: 10px;
@@ -203,23 +247,88 @@
                             </div>
 
                             <!-- PAYMENT METHOD -->
+
+                            <!-- PAYMENT METHOD -->
                             <div class="form-row">
                                 <div class="col-12 mt-3 mb-3">
                                     <h3 class="transaction-form-titles">Payment Information</h3>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label for="paymentMethod">Payment Method</label>
-                                    <select class="form-control" id="paymentMethod" oninput="updateName()" required>
-                                        <option value="cash">Cash</option>
-                                        <option value="creditCard">Credit Card</option>
-                                        <option value="paypal">Paypal</option>
-                                        <option value="gcash">GCash</option>
-                                    </select>
+                                    <label>Payment Method</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="cash"
+                                            value="cash" checked>
+                                        <label class="form-check-label" for="cash">Cash</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="paymentMethod"
+                                            id="creditCard" value="creditCard">
+                                        <label class="form-check-label" for="creditCard">Credit Card</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="paypal"
+                                            value="paypal">
+                                        <label class="form-check-label" for="paypal">Paypal</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="gcash"
+                                            value="gcash">
+                                        <label class="form-check-label" for="gcash">GCash</label>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="returnZipCode">Payment Amount</label>
-                                    <input type="text" class="form-control" id="amount" placeholder="₱"
-                                        oninput="updateName()" required />
+
+                                <div class="card-information-holder">
+                                    <div id="creditCardFields" class="row form-group d-none p-1">
+                                        <div class="col-12 cardTitle">
+                                            <label for="cardNumber">Card Number</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" placeholder="XXXX" class="form-control" id="cardNumber"
+                                                required />
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" placeholder="XXXXXX" class="form-control" id="cardNumber"
+                                                required />
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" placeholder="XXXXX" class="form-control" id="cardNumber"
+                                                required />
+                                        </div>
+                                        <div class="col-8">
+                                            <label for="expirationDate">Expiration Date</label>
+                                            <input type="date" class="form-control" id="expirationDate" required />
+                                        </div>
+                                        <div class="col-4">
+                                            <label for="cvc">CVC</label>
+                                            <input type="text" class="form-control" placeholder="XXXX" id="cvc"
+                                                required />
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="cardUserName">Name of Card User</label>
+                                            <input type="text" class="form-control" id="cardUserName" required />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="mayaQrCodeFields" class="form-group col-md-12 d-none">
+                                    <center>
+                                        <div class="qrBox">
+                                            <div class="mb-4">
+                                                <h5><strong>GCash QR Code</strong></h5>
+                                            </div>
+                                            <img class="gcashQrCode" src="images/transactionsection_gcashQR.png">
+                                        </div>
+                                    </center>
+                                </div>
+                                <div id="gcashQrCodeFields" class="form-group col-md-12 d-none">
+                                    <center>
+                                        <div class="qrBox">
+                                            <div class="mb-4">
+                                                <h5><strong>Paymaya QR Code</strong></h5>
+                                            </div>
+                                            <img class="mayaQrCode" src="images/transactionsection_mayaQR.png">
+                                        </div>
+                                    </center>
                                 </div>
                             </div>
 
@@ -282,117 +391,56 @@
 
                             <!-- Ticket -->
                             <div class="col-md-12 col-lg-12">
-                                <div class="ticket">
-                                    <div class="row d-md-flex">
-                                        <div class="col-10 listing-contents pl-4">
-                                            <div class="row">
-                                                <div class="col-8">
-                                                    <h2 class="ticket-price">PRICE: ₱820.00</h2>
-                                                </div>
-                                                <div class="col-4">
-                                                    <h2 class="ticket-title">TICKET</h2>
-                                                </div>
-                                            </div>
-                                            <table>
-                                                <tr>
-                                                    <td class="ticket-label-2">
-                                                        Name:
-                                                    </td>
-                                                    <td class="ticket-text" id="cust_name"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="ticket-label-2">
-                                                        Amount:
-                                                    </td>
-                                                    <td class="ticket-text" id="cust_amount"></td>
-                                                </tr>
-                                            </table>
-                                            <table>
-                                                <tr>
-                                                    <td class="ticket-label-row">
-                                                        <div class="row d-flex">
-                                                            <div class="col-12">
-                                                                <div class="row">
-                                                                    <div class="col-12 ticket-label">
-                                                                        PICKUP:
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="row">
-                                                                    <div class="col-12 ticket-label">
-                                                                        PICKUP:
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="row">
-                                                                    <div class="col-12 ticket-label">
-                                                                        RETURN:
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="row">
-                                                                    <div class="col-12 ticket-label">
-                                                                        RETURN:
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="row d-flex">
-                                                            <div class="col-12">
-                                                                <div class="row">
-                                                                    <div class="ticket-text col-4" id="pickup_province">
-                                                                        Province
-                                                                    </div>
-                                                                    <div class="ticket-text col-4" id="pickup_city">
-                                                                        City
-                                                                    </div>
-                                                                    <div class="ticket-text col-4" id="pickup_zipcode">
-                                                                        ZipCode
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="row">
-                                                                    <div class="ticket-text col-12"
-                                                                        id="pickup_dateTime">
-                                                                        Date/Time
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="row">
-                                                                    <div class="ticket-text col-4" id="return_province">
-                                                                        Province
-                                                                    </div>
-                                                                    <div class="ticket-text col-4" id="return_city">
-                                                                        City
-                                                                    </div>
-                                                                    <div class="ticket-text col-4" id="return_zipcode">
-                                                                        ZipCode
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="row">
-                                                                    <div class="ticket-text col-12"
-                                                                        id="return_dateTime">
-                                                                        Date/Time
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </table>
+                                <div class="ticket p-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h2 class="ticket-price">PRICE: ₱820.00</h2>
+                                        </div>
+                                        <div class="col-6">
+                                            <h2 class="ticket-title">TICKET</h2>
                                         </div>
                                     </div>
+                                    <table>
+                                        <tr>
+                                            <td id="custName_row">
+                                                Customer:
+                                            </td>
+                                            <td class="ticket-text" id="cust_name"></div> </td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                Pickup Place:
+                                            </td>
+                                            <td class="location_row" id="pickup_province">Province</td>
+                                            <td class="location_row" id="pickup_city">City</td>
+                                            <td class="zipcode_row" id="pickup_zipcode">Zipcode</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Pickup Date/Time:
+                                            </td>
+                                            <td id="pickup_dateTime"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Return Place:
+                                            </td>
+                                            <td class="location_row" id="return_province">Province</td>
+                                            <td class="location_row" id="return_city">City</td>
+                                            <td class="zipcode_row" id="return_zipcode">Zipcode</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Return Date/Time:
+                                            </td>
+                                            <td><div id="return_dateTime"></div></td>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
+                            
 
                         </div>
                     </div>
@@ -408,7 +456,6 @@
             var firstName = document.getElementById("fname").value;
             var middleName = document.getElementById("mname").value;
             var lastName = document.getElementById("lname").value;
-            var amount = document.getElementById("amount").value;
 
             var pprovince = document.getElementById("p_province").value;
             var pcity = document.getElementById("p_city").value;
@@ -424,7 +471,6 @@
                 firstName + " " + (middleName ? middleName + " " : "") + lastName;
 
             document.getElementById("cust_name").textContent = fullName;
-            document.getElementById("cust_amount").textContent = " " + "₱" + amount;
             document.getElementById("pickup_province").textContent =
                 " " + pprovince;
             document.getElementById("pickup_city").textContent = " " + pcity;
@@ -441,6 +487,32 @@
             document.getElementById("return_dateTime").textContent =
                 " " + rdateTime;
         }
+
+        document.querySelectorAll('input[name="paymentMethod"]').forEach((radio) => {
+            radio.addEventListener('change', () => {
+                if (document.getElementById('creditCard').checked) {
+                    document.getElementById('creditCardFields').classList.remove('d-none');
+                    document.getElementById('gcashQrCodeFields').classList.add('d-none');
+                    document.getElementById('mayaQrCodeFields').classList.add('d-none');
+                }
+                else if (document.getElementById('gcash').checked) {
+                    document.getElementById('mayaQrCodeFields').classList.remove('d-none');
+                    document.getElementById('creditCardFields').classList.add('d-none');
+                    document.getElementById('gcashQrCodeFields').classList.add('d-none');
+                }
+                else if (document.getElementById('paypal').checked) {
+                    document.getElementById('gcashQrCodeFields').classList.remove('d-none');
+                    document.getElementById('mayaQrCodeFields').classList.add('d-none');
+                    document.getElementById('creditCardFields').classList.add('d-none');
+                }
+                else {
+                    document.getElementById('creditCardFields').classList.add('d-none');
+                    document.getElementById('gcashQrCodeFields').classList.add('d-none');
+                    document.getElementById('mayaQrCodeFields').classList.add('d-none');
+                }
+            });
+        });
+
     </script>
 
     <!---------------- Scripts ---------------->
