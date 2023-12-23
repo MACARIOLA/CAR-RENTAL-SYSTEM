@@ -14,8 +14,8 @@ Project Details
         4. Communication: Facilitating communication between customers and drivers for rental inquiries, pickup/drop-off details, and inquiries.
         5. Payment Integration: Secure payment processing for rentals.
         6. Rating & Reviews: Allowing customers to rate and review drivers, and vice versa, to ensure accountability.
-        7. Safety & Support: Providing safety guidelines, emergency support, and a mechanism to report issues.
-        8. Admin Dashboard: A backend interface for managing listings, user accounts, and resolving disputes if any.
+        7. Safety & Support: Providing safety guidelines, emergency support, and a reporting mechanism.
+        8. Admin Dashboard: A backend interface for managing listings, and user accounts, and resolving disputes if any.
 
     Technologies Used:
         1. HTML
@@ -37,7 +37,7 @@ Timelines
 
 
 Current Progress
-    50% of Coding is Done. 
+    50% of the Coding is Done. 
     Documentation is Ongoing Smoothly.
     Meetings are Frequently Done.
     Tasks are Distributed Perfectly.
@@ -59,6 +59,13 @@ Members:
     Macariola, Jessalyn
     Mercado, John Rycel D.
     Rodelas, Vnew
+
+
+
+Important Links:
+    Tracker       - https://docs.google.com/spreadsheets/d/1Vmcg-QwDhd2YU1E5rU6eD7ozvdTnHngqWbNmlTHOEPc/edit?usp=sharing
+    Trello        - https://trello.com/invite/b/Fu5JDmr1/ATTIc9f860f1e14cc4d219646bd029e0a082B147A79C/car-rental-system
+    Documentation - https://docs.google.com/document/d/1J2jDsPNa9CfdEMgop_8moaBh6j8CRzQI4B8XqbFJWTA/edit?usp=sharing
 
 
 
