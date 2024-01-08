@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ImperialDrive | Cars</title>
+
+      <!----------------
+            FONTS
+      ----------------->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+      <!----------------
+          TAB ICON
+      ----------------->
+    <link rel="icon" href="./images/idlogo.png" type="image/x-icon">
+
+      <!----------------
+         BOOTSTRAP CSS
+      ----------------->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+
+      <!----------------
+           MAIN CSS
+      ----------------->
+    <link rel="stylesheet" href="css/style.css">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+	<!-- Popper.js -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+      <!----------------
+            MY CSS
+      ----------------->
+    <style>
+      .site-navbar {
+        position: fixed;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+      }
+
+      .zoom-out-image {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .zoom-out-image:hover {
+        transform: scale(1.05);
+      }
+
+      .zoom-out-image2 {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .zoom-out-image2:hover {
+        transform: scale(1.1);
+      }
+
+      .zoom-in-image {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .zoom-in-image:hover {
+        transform: scale(0.96);
+      }
+
+      #scrollBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        background-color: #007bff;
+        color: white;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+
+      #scrollBtn:hover {
+        background-color: #0056b3;
+      }
+
+      .text-justify {
+        text-align: justify;
+      }
+
+      .row-bordered {
+        border: 1px solid #63757E;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .row-bordered:hover {
+        background-color:  #f0f0f0;
+        transition: background-color 0.3s;
+        border: 1px solid #DADADA;
+      }
+
+      .row-bordered:hover .meta {
+        color: #455A66;
+        transition: color 0.3s;
+      }
+
+      .accbtn {
+        color: #364D58;
+        width: 45px;
+        height: 45px;
+        border: 1px solid #63757E;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .accbtn:hover {
+        color: black;
+        border: 1px solid #364D58;
+      }
+
+      .custom-pagination a:hover {
+        background-color: #0056b3;
+      }
+    </style>
+
+
+
+      <!----------------
+        BOOKING SECTION
+      ----------------->
+    <div class="site-wrap" id="home-section">
+
+      <!----------------
+        NAVIGATION BAR
+      ----------------->
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+      <header class="site-navbar site-navbar-target" role="banner">
+        <div class="container">
+          <div class="row align-items-center position-relative">
+            <div class="col-3">
+              <div class="site-logo">
+                <a href="home.html" class="d-flex align-items-center">
+                  <img src="./images/idlogo.png" alt="IDLogo" class="img-fluid col-3 zoom-out-image">
+                </a>
+              </div>
+            </div>
+            <div class="col-9  text-center">
+              <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-black"></span></a></span>
+              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                  <li><a href="home.html" class="nav-link zoom-out-image"><b>Home</b></a></li>
+                  <li><a href="services.html" class="nav-link zoom-out-image"><b>Services</b></a></li>
+                  <li><a href="booking.html" class="nav-link zoom-out-image"><b>Booking</b></a></li>
+                  <li class="active"><a href="cars.html" class="nav-link zoom-out-image"><b><b>Cars</b></b></a></li>
+                  <li><a href="reviews.html" class="nav-link zoom-out-image"><b>Reviews</b></a></li>
+                  <li style="margin-right: 215px;"><a href="contact.html" class="nav-link zoom-out-image"><b>Contact Us</b></a></li>
+                  <li><button type="button" class="accbtn nav-link zoom-out-image"><i class="fas fa-user"></i></button>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+
+
+
+      <!----------------
+          TOP LEVEL
+      ----------------->
+      <div class="hero inner-page" style="background-image: url('images/hero_1_a.jpg');">
+        <div class="container">
+          <div class="row align-items-end ">
+            <div class="col-lg-5">
+              <div class="intro">
+                <h1><strong>Cars</strong></h1>
+                <div class="custom-breadcrumbs"><a href="home.html">Home</a> <span class="mx-2">/</span> <strong>Cars</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!----------------
+         IMPERIALDRIVE
+      ----------------->
+      <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
+              <img src="images/carstop.jpg" alt="Image" class="img-fluid rounded">
+            </div>
+            <div class="col-lg-5 mr-auto">
+              <h2><strong>ImperialDrive</strong></h2>
+              <br>
+              <p class="text-justify">Welcome to our comprehensive car list section, meticulously designed to offer you an expansive view of our diverse fleet of vehicles available for rent. Whether you seek the efficiency of compact cars, the spaciousness of SUVs, or the luxury of premium vehicles, our assortment caters to diverse needs and preferences. Delve into detailed descriptions, accompanied by vivid imagery, allowing you to explore the features, specifications, and unique characteristics of each car. We aim to provide an immersive experience, enabling you to make an informed decision that perfectly aligns with your travel requirements and preferences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!----------------
+     Car List
+----------------->
+
+<div id="carListCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+
+<!-- First car listing -->
+  <div class="carousel-item active">
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <h2 class="section-heading" id="carlists"><strong>Cars List</strong></h2>
+            <p class="mb-5">Showcasing six car options with daily rates, easy picking your car for your adventure.</p>
+          </div>
+        </div>
+
+    <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="listing d-block  align-items-stretch">
+              <div class="listing-img h-100 mr-4">
+                <img src="images/car_6.jpg" alt="Image" class="img-fluid zoom-out-image">
+              </div>
+              <div class="listing-contents h-100">
+                <h3>Mitsubishi Pajero</h3>
+                <div class="rent-price">
+                  <strong>₱5,000.00</strong><span class="mx-1">/</span>day
+                </div>
+                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Body:</span><br>
+                    <span class="number">SUV</span><br>
+                  </div>
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Doors:</span><br>
+                    <span class="number">4</span><br>
+                  </div>
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Passenger:</span><br>
+                    <span class="number">4</span><br>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-justify">A good family car for road trips and adventures. It has a user-friendly infotainment system,
+				          advanced safety systems, and ample cargo space. Some say it's a comfortable driving experience,
+				          with plenty of space for belongings and excellent safety features for children.</p>
+                  <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="listing d-block  align-items-stretch">
+                <div class="listing-img h-100 mr-4">
+                  <img src="images/car_5.jpg" alt="Image" class="img-fluid zoom-out-image">
+                </div>
+              <div class="listing-contents h-100">
+                  <h3>Nissan Moco</h3>
+                  <div class="rent-price">
+                    <strong>₱3,000.00</strong><span class="mx-1">/</span>day
+                  </div>
+                  <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                    <div class="listing-feature pr-4">
+                      <span class="caption">Body:</span><br>
+                      <span class="number">MPV</span><br>
+                    </div>
+                    <div class="listing-feature pr-4">
+                      <span class="caption">Doors:</span><br>
+                      <span class="number">4</span><br>
+                    </div>
+                    <div class="listing-feature pr-4">
+                      <span class="caption">Passenger:</span><br>
+                      <span class="number">4</span><br>
+                    </div>
+                  </div>
+                  <div class="text-justify">
+                    <p>The inside is made comfortable enough with the specs that made infotainment,
+                    safety and ease enhanced to new levels.</p>
+                    <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="listing d-block  align-items-stretch">
+              <div class="listing-img h-100 mr-4">
+                <img src="images/car_4.jpg" alt="Image" class="img-fluid zoom-out-image">
+              </div>
+              <div class="listing-contents h-100">
+                <h3>Honda Fitta</h3>
+                <div class="rent-price">
+                  <strong>₱2,500.00</strong><span class="mx-1">/</span>day
+                </div>
+                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Body:</span><br>
+                    <span class="number">Hatchback</span><br>
+                  </div>
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Doors:</span><br>
+                    <span class="number">4</span><br>
+                  </div>
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Passenger:</span><br>
+                    <span class="number">4</span><br>
+                  </div>
+                </div>
+                <div class="text-justify">
+                  <p>Highs Phenomenally fuel conscious, magically spacious back seat, rides well for a small car.
+				          One of the roomiest and most comfortable cabins in the class.</p>
+                  <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="listing d-block  align-items-stretch">
+              <div class="listing-img h-100 mr-4">
+                <img src="images/car_3.jpg" alt="Image" class="img-fluid zoom-out-image">
+              </div>
+              <div class="listing-contents h-100">
+                <h3>Skoda Laura</h3>
+                <div class="rent-price">
+                  <strong>₱3,500.00</strong><span class="mx-1">/</span>day
+                </div>
+                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Body:</span><br>
+                    <span class="number">Sedan</span><br>
+                  </div>
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Doors:</span><br>
+                    <span class="number">4</span><br>
+                  </div>
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Passenger:</span><br>
+                    <span class="number">4</span><br>
+                  </div>
+                </div>
+                <div class="text-justify">
+                  <p>Good driving response better mileage and good stability on highways. Road presence is really good.
+				          It gives 13-14kmpl in the city and 18kmpl on the highway.</p>
+                  <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="listing d-block  align-items-stretch">
+              <div class="listing-img h-100 mr-4">
+                <img src="images/car_2.jpg" alt="Image" class="img-fluid zoom-out-image">
+              </div>
+              <div class="listing-contents h-100">
+                <h3>Mazda LaPuta</h3>
+                <div class="rent-price">
+                  <strong>₱4,000.00</strong><span class="mx-1">/</span>day
+                </div>
+                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Body:</span><br>
+                    <span class="number">Kei</span><br>
+                  </div>
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Doors:</span><br>
+                    <span class="number">4</span><br>
+                  </div>
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Passenger:</span><br>
+                    <span class="number">4</span><br>
+                  </div>
+                </div>
+                <div class="text-justify">
+                  <p>A compact car that was produced by Mazda from 1999 to 2006. It falls into the category of Kei cars,
+				          which are small vehicles designed to comply with specific size and engine displacement regulations in Japan.
+				          Despite its somewhat peculiar name, the Laputa offers practicality and versatility in a compact package.</p>
+                  <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="listing d-block  align-items-stretch">
+              <div class="listing-img h-100 mr-4">
+                <img src="images/car_1.jpg" alt="Image" class="img-fluid zoom-out-image">
+              </div>
+              <div class="listing-contents h-100">
+                <h3>Buick LaCrosse</h3>
+                <div class="rent-price">
+                  <strong>₱3,500.00</strong><span class="mx-1">/</span>day
+                </div>
+                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Body:</span><br>
+                    <span class="number">Sedan</span><br>
+                  </div>
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Doors:</span><br>
+                    <span class="number">4</span><br>
+                  </div>
+                  <div class="listing-feature pr-4">
+                    <span class="caption">Passenger:</span><br>
+                    <span class="number">4</span><br>
+                  </div>
+                </div>
+                <div class="text-justify">
+                  <p>The model boasts a very well finished interior and comfortable seats, alsong with a firm and
+				          composed ride. All of this plus responsive handling made the LaCrosse an impressive and competitive
+				          large sedan for the first time.</p>
+                  <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>          
+		</div>
+
+    <div class="row">
+      <div class="col-5">
+        <div class="custom-pagination">
+          <span onclick="goToSlide(0)">1</span>
+          <span onclick="goToSlide(1)">2</span>
+          <span onclick="goToSlide(2)">3</span>
+          <span onclick="goToSlide(3)">4</span>
+          <span onclick="goToSlide(4)">5</span>
+        </div>
+      </div>
+    </div>
+	    </div>	
+	  </div>		
+</div>
+
+<!-- Second set of car list items -->
+<div class="carousel-item">
+  <div class="carousel-item active">
+    <div class="site-section bg-light">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-7">
+            <h2 class="section-heading" id="carlists"><strong>Cars List</strong></h2>
+            <p class="mb-5">Showcasing six car options with daily rates, easy picking your car for your adventure.</p>
+          </div>
+        </div>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="listing d-block align-items-stretch">
+        <div class="listing-img h-100">
+          <img src="images/cars2_1.jpg" alt="Image" class="img-fluid zoom-out-image">
+        </div>
+      <div class="listing-contents h-100">
+        <h3>Toyota Vios 1.5 Automatic</h3>
+        <div class="rent-price">
+          <strong>₱5,000.00</strong><span class="mx-1">/</span>day
+        </div>
+        <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+          <div class="listing-feature pr-4">
+            <span class="caption">Body:</span><br>
+            <span class="number">Sedan</span><br>
+          </div>
+          <div class="listing-feature pr-4">
+            <span class="caption">Doors:</span><br>
+            <span class="number">4</span><br>
+          </div>
+          <div class="listing-feature pr-4">
+            <span class="caption">Passenger:</span><br>
+            <span class="number">5</span><br>
+          </div>
+        </div>
+          <div class="text-justify">
+            <p>Its frugal range of engines offers great fuel economy for those who want a car
+            that they can use in the city and take on long road trips out of town. Toyota has
+            also given the Vios several new upgrades with its most recent facelift giving it
+            access to LED headlights, foglights, and taillights, as well as a backup camera as
+            standard for the G variant.</p>
+            <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="listing d-block  align-items-stretch">
+        <div class="listing-img h-100 mr-4">
+          <img src="images/cars2_2.jpg" alt="Image" class="img-fluid zoom-out-image">
+        </div>
+        <div class="listing-contents h-100">
+          <h3>Toyota Alphard 350X</h3>
+          <div class="rent-price">
+            <strong>₱3,000.00</strong><span class="mx-1">/</span>day
+          </div>
+          <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+            <div class="listing-feature pr-4">
+              <span class="caption">Body:</span><br>
+              <span class="number">MPV</span><br>
+            </div>
+            <div class="listing-feature pr-4">
+              <span class="caption">Doors:</span><br>
+              <span class="number">5</span><br>
+            </div>
+            <div class="listing-feature pr-4">
+              <span class="caption">Passenger:</span><br>
+              <span class="number">8</span><br>
+            </div>
+          </div>
+          <div class="text-justify">
+            <p>Five stars. Ten out of ten. Perfection. Those are the words we would use to describe
+				    the Alphard's comfort, if not for one little nitpick. Now, you can doze off in the back
+				    of this thing, no problem. Independent suspension all around makes for a highly comfortable ride.</p>
+            <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="listing d-block  align-items-stretch">
+        <div class="listing-img h-100 mr-4">
+          <img src="images/cars2_3.jpg" alt="Image" class="img-fluid zoom-out-image">
+        </div>
+        <div class="listing-contents h-100">
+          <h3>Nissan Primastar Seaside by Dethleffs dCi 170</h3>
+          <div class="rent-price">
+            <strong>₱2,500.00</strong><span class="mx-1">/</span>day
+          </div>
+          <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+            <div class="listing-feature pr-4">
+              <span class="caption">Body:</span><br>
+              <span class="number">RV</span><br>
+            </div>
+            <div class="listing-feature pr-4">
+              <span class="caption">Doors:</span><br>
+              <span class="number">4</span><br>
+            </div>
+            <div class="listing-feature pr-4">
+              <span class="caption">Passenger:</span><br>
+              <span class="number">6</span><br>
+            </div>
+          </div>
+            <div class="text-justify">
+              <p>Mid-size panel van that offers a spacious cabin, flexible seating, and a kitchenette.
+				      It has a 170 PS (168 hp) diesel engine and a seven-speed dual-clutch transmission.</p>
+              <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="listing d-block  align-items-stretch">
+        <div class="listing-img h-100 mr-4">
+          <img src="images/cars2_4.jpg" alt="Image" class="img-fluid zoom-out-image">
+        </div>
+        <div class="listing-contents h-100">
+          <h3>Toyota Proace City 1.5 D-4D 100HP</h3>
+          <div class="rent-price">
+            <strong>₱3,500.00</strong><span class="mx-1">/</span>day
+          </div>
+          <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+            <div class="listing-feature pr-4">
+              <span class="caption">Body:</span><br>
+              <span class="number">Van</span><br>
+            </div>
+            <div class="listing-feature pr-4">
+              <span class="caption">Doors:</span><br>
+              <span class="number">3</span><br>
+            </div>
+            <div class="listing-feature pr-4">
+              <span class="caption">Passenger:</span><br>
+              <span class="number">7</span><br>
+            </div>
+          </div>
+            <div class="text-justify">
+              <p>A van that comes in two diesel variants: 1.5-litre BlueHDi with 100hp and 1.5-litre
+				      BlueHDi with 130hp. Reviews say the 100hp engine has enough power for highway driving
+				      and quick getaways.</p>
+              <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="listing d-block  align-items-stretch">
+        <div class="listing-img h-100 mr-4">
+          <img src="images/cars2_5.jpg" alt="Image" class="img-fluid zoom-out-image">
+        </div>
+        <div class="listing-contents h-100">
+          <h3>Honda Civic Hatchback 2023</h3>
+          <div class="rent-price">
+            <strong>₱4,000.00</strong><span class="mx-1">/</span>day
+          </div>
+          <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+            <div class="listing-feature pr-4">
+              <span class="caption">Body:</span><br>
+              <span class="number">Hatchback</span><br>
+            </div>
+            <div class="listing-feature pr-4">
+              <span class="caption">Doors:</span><br>
+              <span class="number">5</span><br>
+            </div>
+            <div class="listing-feature pr-4">
+              <span class="caption">Passenger:</span><br>
+              <span class="number">5</span><br>
+            </div>
+            </div>
+            <div class="text-justify">
+              <p>Generally positive, with some reviewers praising its handling, performance, and safety.
+				      It offers admirable performance, a refined and roomy cabin, and plenty of connectivity and
+				      safety tech to please most users.</p>
+              <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+              </div>
+        </div>
+      </div>
+    </div>
+          
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="listing d-block  align-items-stretch">
+        <div class="listing-img h-100 mr-4">
+          <img src="images/cars2_6.jpg" alt="Image" class="img-fluid zoom-out-image">
+        </div>
+        <div class="listing-contents h-100">
+          <h3>Honda Civic V 3d 1.5 DXi</h3>
+          <div class="rent-price">
+            <strong>₱3,500.00</strong><span class="mx-1">/</span>day
+          </div>
+          <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+            <div class="listing-feature pr-4">
+              <span class="caption">Body:</span><br>
+              <span class="number">Sedan</span><br>
+            </div>
+            <div class="listing-feature pr-4">
+              <span class="caption">Doors:</span><br>
+              <span class="number">3</span><br>
+            </div>
+            <div class="listing-feature pr-4">
+              <span class="caption">Passenger:</span><br>
+               <span class="number">5</span><br>
+            </div>
+          </div>
+          <div class="text-justify">
+            <p>Has a 1.5-liter turbocharged four-cylinder engine that produces 176 horsepower and
+				    240 Nm of torque. Reviews also say the engine never feels stressed and always has
+				    power in reserve.</p>
+            <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+        <div class="custom-pagination">
+          <span onclick="goToSlide(0)">1</span>
+          <span onclick="goToSlide(1)">2</span>
+          <span onclick="goToSlide(2)">3</span>
+          <span onclick="goToSlide(3)">4</span>
+          <span onclick="goToSlide(4)">5</span>
+        </div>
+      </div>
+    </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- Carousel Controls -->
+        <a class="carousel-control-prev" href="#carListCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carListCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+      <!----------------
+        BOOKING SHRTCT
+      ----------------->
+      <div class="site-section bg-primary py-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7 mb-4 mb-md-0">
+              <h2 class="mb-0 text-white">Want to know how?</h2>
+              <p class="mb-0 opa-7">Are you gearing up for your next adventure? Discover the seamless process of booking your ideal ride with us!</p>
+            </div>
+            <div class="col-lg-5 text-md-right zoom-out-image">
+              <a href="booking.html" class="btn btn-primary btn-white">Discover How</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!----------------
+            FOOTER
+      ----------------->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <h2 class="footer-heading mb-4">About Us</h2>
+            <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey, your decision.</p>
+          </div>
+          <div class="col-lg-8 ml-auto">
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="home.html">About Us</a></li>
+                  <li><a href="services.html">Services</a></li>
+                  <li><a href="booking.html">Booking</a></li>
+                  <li><a href="news.html">News</a></li>
+                  <li><a href="reviews.html">Reviews</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Resources</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Policies</a></li>
+                  <li><a href="#">Terms of Service</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Support</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">LinkedIn</a></li>
+                  <li><a href="#">Youtube</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Company</h2>
+                <ul class="list-unstyled">
+                  <li><a href="home.html">About Us</a></li>
+                  <li><a href="about.html">Our Team</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+      <!----------------
+            GO UP
+      ----------------->
+      <button onclick="scrollToTop()" id="scrollBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+      <!----------------
+            MY JS
+      ----------------->
+    <script>
+
+      function scrollToTop() {
+        const scrollDuration = 400; // Duration of the scroll animation in milliseconds
+        const scrollStep = -window.scrollY / (scrollDuration / 15);
+
+        const scrollInterval = setInterval(function() {
+          if (window.scrollY !== 0) {
+            window.scrollBy(0, scrollStep);
+          } else {
+            clearInterval(scrollInterval);
+          }
+        }, 15);
+      }
+
+      window.onscroll = function() {
+        const scrollBtn = document.getElementById("scrollBtn");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      };
+
+      document.querySelector('.accbtn').addEventListener('click', function() {
+        window.location.href = 'accounts.html';
+      });
+      </script>
+
+	<script>
+	  // Function to go to a specific slide in the carousel
+	  function goToSlide(index) {
+		$('#carListCarousel').carousel(index);
+	  }
+	</script>
+
+      <!----------------
+         BOOTSTRAP JS
+      ----------------->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/aos.js"></script>
+
+      <!----------------
+           MAIN JS
+      ----------------->
+    <script src="js/main.js"></script>
+</body>
+</html>
