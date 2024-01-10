@@ -3,7 +3,7 @@
 <?php
 include 'config.php'; 
 
-// start of database
+// start of rows
 $start = 0;
 
 // total rows in a page
@@ -281,7 +281,7 @@ $result = mysqli_query($conn, $sql);
                     <span>CAR</span>
                   </div>
                   <div class="listing-feature pr-4">
-                    <span class="caption">Doors:</span>
+                    <span class="caption">Rating:</span>
                     <span class="number"><?php echo $rows["doors"]; ?></span>
                   </div>
                   <div class="listing-feature pr-4">
