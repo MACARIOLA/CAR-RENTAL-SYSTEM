@@ -1,0 +1,5 @@
+Yung buong code lagay mo sa htdocs
+
+tapos dun sa xampp gawa ka ng database pangalan "id_dtb"
+
+tapos import mo yung sql file na naandito
