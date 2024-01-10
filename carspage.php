@@ -309,7 +309,7 @@ $result = mysqli_query($conn, $sql);
                     <span class="number"><?php echo $rows["doors"]; ?></span>
                   </div>
                   <div class="listing-feature pr-4">
-                    <span class="caption">Aivailability:</span>
+                    <span class="caption">Availability:</span>
                     <span class="number text-success"><?php echo $rows["capacity"]; ?></span>
                   </div>
                 </div>
