@@ -3,7 +3,7 @@
 <?php
 include 'config.php'; 
 
-// start of rows
+// start of database
 $start = 0;
 
 // total rows in a page
@@ -281,7 +281,7 @@ $result = mysqli_query($conn, $sql);
                     <span>CAR</span>
                   </div>
                   <div class="listing-feature pr-4">
-                    <span class="caption">Rating:</span>
+                    <span class="caption">Doors:</span>
                     <span class="number"><?php echo $rows["doors"]; ?></span>
                   </div>
                   <div class="listing-feature pr-4">
@@ -300,15 +300,15 @@ $result = mysqli_query($conn, $sql);
                 <h3><?php echo $rows["name"]; ?></h3>
                 <div class="rent-price">₱<?php echo $rows["price"]; ?><strong>/day</strong></div>
                 <div class="d-block d-md-flex mb-3 border-bottom pb-3">
-                  <div class="listing-feature pr-4">
+                  <div class="listing-feature pr-3">
                     <span>Body:</span>
                     <span>CAR</span>
                   </div>
-                  <div class="listing-feature pr-4">
+                  <div class="listing-feature pr-3">
                     <span class="caption">Doors:</span>
                     <span class="number"><?php echo $rows["doors"]; ?></span>
                   </div>
-                  <div class="listing-feature pr-4">
+                  <div class="listing-feature pr-3">
                     <span class="caption">Availability:</span>
                     <span class="number text-success"><?php echo $rows["capacity"]; ?></span>
                   </div>
@@ -321,28 +321,6 @@ $result = mysqli_query($conn, $sql);
               <?php
               }
               ?>
-              <!-- <div class="listing-contents">
-                <h3><?php echo $rows["name"]; ?></h3>
-                <div class="rent-price">₱<?php echo $rows["price"]; ?><strong>/day</strong></div>
-                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
-                  <div class="listing-feature pr-4">
-                    <span>Body:</span>
-                    <span>CAR</span>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Doors:</span>
-                    <span class="number"><?php echo $rows["doors"]; ?></span>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">passenger:</span>
-                    <span class="number"><?php echo $rows["capacity"]; ?></span>
-                  </div>
-                </div>
-                <div>
-                  <p class="text-justify"><?php echo $rows["information"]; ?></p>
-                    <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
-                </div>
-              </div> -->
             </div>
           </div>
           <?php } ?>
