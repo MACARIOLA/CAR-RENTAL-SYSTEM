@@ -58,6 +58,8 @@ $result = mysqli_query($conn, $sql);
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/aos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
       <!----------------
            MAIN CSS
@@ -160,6 +162,20 @@ $result = mysqli_query($conn, $sql);
       .custom-pagination a:hover {
         background-color: #0056b3;
       }
+
+      .card{
+        height: 100%;
+      }
+
+      .card-body{
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+      }
+
+      .card-text{
+        flex-grow: 1;
+      }
     </style>
     
 
@@ -198,7 +214,7 @@ $result = mysqli_query($conn, $sql);
                   <li><a href="home.html" class="nav-link zoom-out-image"><b>Home</b></a></li>
                   <li><a href="services.html" class="nav-link zoom-out-image"><b>Services</b></a></li>
                   <li><a href="booking.html" class="nav-link zoom-out-image"><b>Booking</b></a></li>
-                  <li class="active"><a href="cars.html" class="nav-link zoom-out-image"><b><b>Cars</b></b></a></li>
+                  <li class="active"><a href="carspage.php" class="nav-link zoom-out-image"><b><b>Cars</b></b></a></li>
                   <li><a href="reviews.html" class="nav-link zoom-out-image"><b>Reviews</b></a></li>
                   <li style="margin-right: 215px;"><a href="contact.php" class="nav-link zoom-out-image"><b>Contact Us</b></a></li>
                   <li><button type="button" class="accbtn nav-link zoom-out-image"><i class="fas fa-user"></i></button>
@@ -264,58 +280,45 @@ $result = mysqli_query($conn, $sql);
 
         <div class="row">
         <?php while($rows = mysqli_fetch_assoc($result)){  ?>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="listing d-block align-items">
-              <div class="listing-img">
-                <a href="details.php?id=<?php echo $rows['car_id']; ?>"><img src="<?php echo $rows["image"]; ?>" alt="Image" class="img-fluid zoom-out-image"></a>
-              </div>
+          <div class="col-md-4 col-6 gy-4">
+            <div class="card">
+              <a href="details.php?id=<?php echo $rows['car_id']; ?>"><img src="<?php echo $rows["image"]; ?>" alt="Image" class="img-fluid zoom-out-image card-img-top img-fit"></a>
               <?php
               if($rows["capacity"] == 0){
               ?>
-              <div class="listing-contents">
-                <h3><?php echo $rows["name"]; ?></h3>
-                <div class="rent-price">₱<?php echo $rows["price"]; ?><strong>/day</strong></div>
-                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
-                  <div class="listing-feature pr-4">
-                    <span>Body:</span>
-                    <span>CAR</span>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Doors:</span>
-                    <span class="number"><?php echo $rows["doors"]; ?></span>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Availability:</span>
-                    <span class="number">0</span>
-                  </div>
-                </div>
-                <div>
-                  <p class="text-justify"><?php echo $rows["information"]; ?></p>
+              <div class="card-body">
+                <h5><strong><?php echo $rows["name"]; ?></strong></h5>
+                <div class="rent-price text-primary">₱<?php echo $rows["price"]; ?><strong>/day</strong></div>
+                <p class="card-text">
+                  <span class="pr-2">Body:</span>
+                  <span class="pr-2">CAR</span>
+                  <span class="caption pr-2">Doors:</span>
+                  <span class="number pr-2"><?php echo $rows["doors"]; ?></span>
+                  <span class="caption pr-2">Availability:</span>
+                  <span class="number text-danger pr-2">0</span><br><br>
+                  <span class="text-justify"><?php echo $rows["information"]; ?></span>
+                </p>
+                <div class="text-end">
+                  <a class="btn btn-primary btn-danger btn-sm zoom-out-image text-white">Out of Stock</a>
                 </div>
               </div>
               <?php
               }else{
               ?>
-              <div class="listing-contents">
-                <h3><?php echo $rows["name"]; ?></h3>
-                <div class="rent-price">₱<?php echo $rows["price"]; ?><strong>/day</strong></div>
-                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
-                  <div class="listing-feature pr-3">
-                    <span>Body:</span>
-                    <span>CAR</span>
-                  </div>
-                  <div class="listing-feature pr-3">
-                    <span class="caption">Doors:</span>
-                    <span class="number"><?php echo $rows["doors"]; ?></span>
-                  </div>
-                  <div class="listing-feature pr-3">
-                    <span class="caption">Availability:</span>
-                    <span class="number text-success"><?php echo $rows["capacity"]; ?></span>
-                  </div>
-                </div>
-                <div>
-                  <p class="text-justify"><?php echo $rows["information"]; ?></p>
-                    <p><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a></p>
+              <div class="card-body">
+                <h5><strong><?php echo $rows["name"]; ?></strong></h5>
+                <div class="rent-price text-primary">₱<?php echo $rows["price"]; ?><strong>/day</strong></div>
+                <p class="card-text">
+                  <span class="pr-2">Body:</span>
+                  <span class="pr-2">CAR</span>
+                  <span class="caption pr-2">Doors:</span>
+                  <span class="number pr-2"><?php echo $rows["doors"]; ?></span>
+                  <span class="caption pr-2">Availability:</span>
+                  <span class="number text-success pr-2"><?php echo $rows["capacity"]; ?></span><br><br>
+                  <span class="text-justify"><?php echo $rows["information"]; ?></span>
+                </p>
+                <div class="text-end">
+                  <a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a>
                 </div>
               </div>
               <?php
@@ -326,10 +329,9 @@ $result = mysqli_query($conn, $sql);
           <?php } ?>
         </div>
         
-
         <!----- PAGE ----->
         <div class="row">
-          <div class="col-5">
+          <div class="col-5 m-5">
             <div class="custom-pagination">
               <?php
               for($counter = 1; $counter <= $pages; $counter++){
