@@ -15,7 +15,7 @@ $result = mysqli_query($conn, $sql);
 <html lang="en">
 
   <head>
-    <title>CarRental | Reviews</title>
+    <title>CarRental | Car Details</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
