@@ -80,8 +80,8 @@ $result = mysqli_query($conn, $sql);
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li><a href="home.html" class="nav-link">Home</a></li>
                   <li><a href="about.html" class="nav-link">About</a></li>
-                  <li><a href="services.html" class="nav-link">Services</a></li>
-                  <li><a href="booking.html" class="nav-link">Booking</a></li>
+                  <li><a href="services.php" class="nav-link">Services</a></li>
+                  <li><a href="booking.php" class="nav-link">Booking</a></li>
                   <li><a href="carspage.php" class="nav-link">Cars</a></li>
                   <li><a href="reviews.php" class="nav-link">Reviews</a></li>
                   <li><a href="contact.php" class="nav-link">Contact Us</a></li>
@@ -151,7 +151,7 @@ $result = mysqli_query($conn, $sql);
                         <li><a href="#" style="font-size: 20px;">Capacity <span style="color: black; font-size: 20px;">4</span></a></li>
                         <li><a href="#" style="font-size: 20px;">Passenger <span style="color: black; font-size: 20px;"><?php echo $rows["capacity"]; ?></span></a></li>
                         <?php
-                        if($rows["capacity"] == 0){
+                        if($rows["availability"] == 0){
                         ?>
                         <li><a href="#" style="font-size: 20px;">Availability <span class="text-danger" style="color: black; font-size: 20px;">Out of Stock</span></a></li>
                         <li><a href="" style="font-size: 20px;"></a><p class="text-white"><a class="btn btn-primary btn-danger btn-sm zoom-out-image">Out of Stock</a></p></li>
@@ -208,8 +208,8 @@ $result = mysqli_query($conn, $sql);
                 <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
                   <li><a href="home.html">About Us</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="booking.html">Booking</a></li>
+                  <li><a href="services.php">Services</a></li>
+                  <li><a href="booking.php">Booking</a></li>
                   <li><a href="news.html">News</a></li>
                   <li><a href="reviews.html">Reviews</a></li>
                 </ul>
