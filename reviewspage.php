@@ -176,12 +176,12 @@
                         <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                             <ul class="site-menu main-menu js-clone-nav ml-auto ">
                                 <li><a href="home.html" class="nav-link zoom-out-image"><b>Home</b></a></li>
-                                <li><a href="services.php" class="nav-link zoom-out-image"><b>Services</b></a></li>
-                                <li><a href="booking.php" class="nav-link zoom-out-image"><b>Booking</b></a></li>
-                                <li><a href="carspage.php" class="nav-link zoom-out-image"><b>Cars</b></a></li>
+                                <li><a href="services.html" class="nav-link zoom-out-image"><b>Services</b></a></li>
+                                <li><a href="booking.html" class="nav-link zoom-out-image"><b>Booking</b></a></li>
+                                <li><a href="cars.html" class="nav-link zoom-out-image"><b>Cars</b></a></li>
                                 <li class="active"><a href="reviews.php"
                                         class="nav-link zoom-out-image"><b><b>Reviews</b></b></a></li>
-                                <li style="margin-right: 215px;"><a href="contact.php"
+                                <li style="margin-right: 215px;"><a href="contact.html"
                                         class="nav-link zoom-out-image"><b>Contact Us</b></a></li>
                                 <li><button type="button" class="accbtn nav-link zoom-out-image"><i
                                             class="fas fa-user"></i></button>
@@ -284,7 +284,7 @@
                         dream ride and start exploring today.</p>
                 </div>
                 <div class="col-lg-5 text-md-right zoom-out-image">
-                    <a href="carspage.php" class="btn btn-primary btn-white">Rent a car now</a>
+                    <a href="cars.html" class="btn btn-primary btn-white">Rent a car now</a>
                 </div>
             </div>
         </div>
@@ -309,10 +309,10 @@
                             <h2 class="footer-heading mb-4">Quick Links</h2>
                             <ul class="list-unstyled">
                                 <li><a href="home.html">About Us</a></li>
-                                <li><a href="services.php">Services</a></li>
-                                <li><a href="booking.php">Booking</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="reviews.php">Reviews</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="booking.html">Booking</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="reviews.html">Reviews</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3">
@@ -322,7 +322,7 @@
                                 <li><a href="#">Policies</a></li>
                                 <li><a href="#">Terms of Service</a></li>
                                 <li><a href="#">Privacy</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3">
@@ -339,8 +339,8 @@
                             <h2 class="footer-heading mb-4">Company</h2>
                             <ul class="list-unstyled">
                                 <li><a href="home.html">About Us</a></li>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
+                                <li><a href="about.html">Our Team</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
