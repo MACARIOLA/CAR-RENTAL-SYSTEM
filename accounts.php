@@ -1,24 +1,22 @@
 <?php
-    session_start();
+session_start();
 
-    Include('con_db.php');
+include "con_db.php";
 
-    if (isset($_SESSION["Username"])) {
-        $username = $_SESSION["Username"];
-        $sql = "SELECT * FROM customers_tbl WHERE Email = '$username'";
-        $result = mysqli_query($conn, $sql);
-        
-        if ($result && mysqli_num_rows($result) > 0) {
-            $userProfile = mysqli_fetch_assoc($result);
-            $profileImage = isset($userProfile["Profile_pic"]) ? 'data:image;base64,' . base64_encode($userProfile["Profile_pic"]) : null;
-          
+if (isset($_SESSION["Username"])) {
+    $username = $_SESSION["Username"];
+    $sql = "SELECT * FROM customers_tbl WHERE Email = '$username'";
+    $result = mysqli_query($conn, $sql);
 
-        }
-    } 
-
-    else {
-        $profileImage = null;
+    if ($result && mysqli_num_rows($result) > 0) {
+        $userProfile = mysqli_fetch_assoc($result);
+        $profileImage = isset($userProfile["Profile_pic"])
+            ? "data:image;base64," . base64_encode($userProfile["Profile_pic"])
+            : null;
     }
+} else {
+    $profileImage = null;
+}
 ?>
 
 <!DOCTYPE html>
@@ -141,13 +139,6 @@
                 margin-top: 20px;
             }
 
-            #photo img {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                margin-bottom: 10px;
-            }
-
             #info {
                 text-align: center;
             }
@@ -208,7 +199,7 @@
             }
 
             .zoom-out-image:hover {
-                transform: scale(1.02);
+                transform: scale(1.05);
             }
 
             .zoom-out-image2 {
@@ -240,51 +231,6 @@
                 font-weight: 700; 
             }
 
-            #photo {
-                position: relative;
-                display: inline-block;
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                overflow: hidden;
-            }
-
-            #photo img {
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                margin-bottom: 10px;
-            }
-
-            .overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                opacity: 0;
-                transition: opacity 0.3s;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 50%;
-            }
-
-            .plus {
-                font-size: 2em;
-                color: white;
-                display: none;
-            }
-
-            #photo:hover .overlay {
-                opacity: 1;
-            }
-
-            #photo:hover .plus {
-                display: block;
-            }
-
             .row-bordered {
                 border: 1px solid #63757E;
                 border-radius: 5px;
@@ -302,6 +248,83 @@
                 color: #455A66;
                 transition: color 0.3s;
             }
+
+            #photo-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                position: relative;
+            }
+
+            #photo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            #profileLink-container {
+                text-align: center;
+            }
+
+            #profileLink {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            #photo img {
+                max-width: 100%;
+                max-height: 200px;
+                margin: auto;
+                border-radius: 50%;
+            }
+
+            #save-changes-container {
+                margin-top: 10px;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                opacity: 0;
+                transition: opacity 0.3s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                z-index: 1;
+                overflow: hidden;
+            }
+
+            .plus {
+                font-size: 2em;
+                color: white;
+                display: none;
+            }
+
+            #photo:hover .overlay {
+                opacity: 1;
+            }
+
+            #photo:hover .plus {
+                display: block;
+            }
+
+            #save-changes-container {
+                margin-top: 10px;
+                text-align: center; /* Center the button */
+            }
+
+            #save-changes-container input {
+                margin: 0 auto; /* Center the button horizontally */
+            }
         </style>
 
 
@@ -310,7 +333,7 @@
           ACCOUNT SECTION
         ----------------->
         <div id="body">
-    <div class="button">
+            <div class="button">
         <a href="javascript:history.go(-1);" style="text-decoration: none; color: white;">
             <div id="Back" class="zoom-out-image2">Back</div>
         </a>
@@ -320,35 +343,77 @@
     </div>
 
     <div id="profile">
-        <form action="#" method="post" enctype="multipart/form-data">
-            <!-- Choose Photo Button -->
-           
-            <input type="file" id="fileInput" name="photo" style="display: none;" accept="image/*">
-
-            <a href="#" id="profileLink" style="text-decoration: none; color: inherit;">
-                <div id="photo" class="zoom-out-image2">
-                    <label for="fileInput">
-                        <?php if (!is_null($profileImage)): ?>
-                            <img src="<?php echo $profileImage; ?>" id="profileImage" alt="Profile Photo">
-                        <?php else: ?>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="7" r="4"/>
-                                <path d="M12 11c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm6 11h-12"/>
-                            </svg>
-                        <?php endif; ?>
-                    </label>
-                    <input type="file" id="fileInput" name="insert" style="display: none;" accept="image/*">
+    <form action="#" method="post" enctype="multipart/form-data">
+    <div id="photo-container">
+    <input type="file" id="fileInput" name="photo" style="display: none;" accept="image/*">
+    <div id="profileLink-container">
+        <a href="#" id="profileLink">
+            <div id="photo" class="zoom-out-image">
+                <div class="overlay" onclick="chooseFile()">
+                    <span class="plus">+</span>
                 </div>
-            </a>
+                <label for="fileInput">
+                    <img src="<?php echo $profileImage; ?>" id="profileImage" alt="Profile Photo">
+                </label>
+            </div>
+        </a>
+    </div>
+</div>
 
-            <!-- Save Changes Button -->
-            <input type="submit" name="insert" value="Save Changes" class="zoom-out-image2">
-        </form>
+    <!-- Save Changes Button -->
+    <div id="save-changes-container">
+        <input type="submit" name="insert" value="Save Changes" class="zoom-out-image2">
+    </div>
+</form>
 
-        <?php
-        if (isset($_POST['insert'])) {
+<script>
+    function chooseFile() {
+        document.getElementById('fileInput').click();
+    }
+
+    function previewImage(input) {
+        var profileImage = document.getElementById('profileImage');
+        var file = input.files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                profileImage.src = e.target.result;
+                profileImage.style.display = 'block';
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            profileImage.src = '#';
+            profileImage.style.display = 'none';
+        }
+    }
+
+    // Attach the previewImage function to the file input change event
+    document.getElementById('fileInput').addEventListener('change', function () {
+        previewImage(this);
+    });
+
+    function reloadPage() {
+        location.reload();
+    }
+        document.getElementById('saveChangesForm').addEventListener('submit', function () {
+        reloadPage();
+    });
+</script>
+
+
+
+        <script>
+            function chooseFile() {
+        document.getElementById('fileInput').click();
+    }
+        </script>
+
+        <?php if (isset($_POST["insert"])) {
             // Retrieve the uploaded file
-            $photo = $_FILES['photo']['tmp_name'];
+            $photo = $_FILES["photo"]["tmp_name"];
 
             // Read the contents of the file
             $photoData = addslashes(file_get_contents($photo)); // Addslashes to escape special characters
@@ -360,29 +425,30 @@
             } else {
                 echo "Error updating profile photo!";
             }
-        }
-        ?>
+        } ?>
   
-            <?php
-                if (isset($_SESSION["Username"])) {
-                    $username = $_SESSION["Username"];
-                    $sql = "SELECT * FROM customers_tbl WHERE Email = '$username'";
-                    $result = mysqli_query($conn, $sql);
-                    
-                    if ($result && mysqli_num_rows($result) > 0) {
-                        $userProfile = mysqli_fetch_assoc($result);
-                    }
-                } 
-                
-                else {
-                    Echo "user not login";
+            <?php if (isset($_SESSION["Username"])) {
+                $username = $_SESSION["Username"];
+                $sql = "SELECT * FROM customers_tbl WHERE Email = '$username'";
+                $result = mysqli_query($conn, $sql);
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $userProfile = mysqli_fetch_assoc($result);
                 }
-            ?>
+            } else {
+                echo "user not login";
+            } ?>
 
             <div id="info">
-                <h3 class="mb-3"><b><?php echo $userProfile['First_name'].' '.$userProfile['Last_name'].' '.$userProfile['Mi']; ?></b></h3>
-                <a class="meta2"><?php echo $userProfile['Email']; ?></a>
-                <a class="meta"><?php echo $userProfile['Contact_number']; ?></a><br>
+                <h3 class="mb-3"><b><?php echo $userProfile["First_name"] .
+                    " " .
+                    $userProfile["Last_name"] .
+                    " " .
+                    $userProfile["Mi"]; ?></b></h3>
+                <a class="meta2"><?php echo $userProfile["Email"]; ?></a>
+                <a class="meta"><?php echo $userProfile[
+                    "Contact_number"
+                ]; ?></a><br>
             </div>
         </div>
 
@@ -398,61 +464,65 @@
   
                 <div class="row">
                     <?php
-                        $conn = mysqli_connect('localhost', 'root', '', 'id_dtb');
-                        
-                            if (!$conn) {
-                                die("Connection failed: " . mysqli_connect_error());
-                            }
+                    $conn = mysqli_connect("localhost", "root", "", "id_dtb");
 
-                            $sql = "SELECT * FROM reviews_tbl WHERE Email = '$username' ORDER BY Review_ID DESC LIMIT 9";
-                            $result = mysqli_query($conn, $sql);
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
 
-                            $reviewCounter = 0;
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                echo '<div class="col-lg-4 mb-4">';
-                                echo '<div class="card testimonial-2 zoom-out-image">';
-                                echo '<blockquote class="mb-4 text-justify">';
-                                echo '<p>"' . $row['Customer_Comment'] . '"</p>';
-                                echo '</blockquote>';
+                    $sql = "SELECT * FROM reviews_tbl WHERE Email = '$username' ORDER BY Review_ID DESC LIMIT 9";
+                    $result = mysqli_query($conn, $sql);
 
-                                echo '<div class="card-body">';
-                                echo '<div class="d-flex align-items-center">';
+                    $reviewCounter = 0;
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<div class="col-lg-4 mb-4">';
+                        echo '<div class="card testimonial-2 zoom-out-image">';
+                        echo '<blockquote class="mb-4 text-justify">';
+                        echo '<p>"' . $row["Customer_Comment"] . '"</p>';
+                        echo "</blockquote>";
 
-                            if (isset($row["Profile_pic"]) && !is_null($row["Profile_pic"])) {
-                                $profilePic = $row["Profile_pic"];
-                                echo '<img class="profile" src="' . $profilePic . '" alt="Image" class="img-fluid rounded-circle mr-3" style="height: 25px; width: auto;">';
-                            } 
-                            else {
-                                echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
-                                echo '<circle cx="12" cy="7" r="4"/>';
-                                echo '<path d="M12 11c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm6 11h-12"/>';
-                                echo '</svg>';
-                            }
+                        echo '<div class="card-body">';
+                        echo '<div class="d-flex align-items-center">';
 
-                            echo '<div class="author-name">';
-
-                            $Name = isset($row["name"]) ? $row["name"] : 'Unknown';
-                            echo '<span class="d-block"> ' . $Name . ' </span>';
-
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-
-                            echo '</div>';
-                            echo '</div>';
-
-                            $reviewCounter++;
+                        if (
+                            isset($row["Profile_pic"]) &&
+                            !is_null($row["Profile_pic"])
+                        ) {
+                            $profilePic = $row["Profile_pic"];
+                            echo '<img class="profile" src="' .
+                                $profilePic .
+                                '" alt="Image" class="img-fluid rounded-circle mr-3" style="height: 25px; width: auto;">';
+                        } else {
+                            echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
+                            echo '<circle cx="12" cy="7" r="4"/>';
+                            echo '<path d="M12 11c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm6 11h-12"/>';
+                            echo "</svg>";
                         }
 
-                        echo '</div>';
+                        echo '<div class="author-name">';
 
-                        echo '</div>';
+                        $Name = isset($row["name"]) ? $row["name"] : "Unknown";
+                        echo '<span class="d-block"> ' . $Name . " </span>";
 
-                        echo '</div>';
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</div>";
 
-                        mysqli_free_result($result);
+                        echo "</div>";
+                        echo "</div>";
 
-                        mysqli_close($conn);
+                        $reviewCounter++;
+                    }
+
+                    echo "</div>";
+
+                    echo "</div>";
+
+                    echo "</div>";
+
+                    mysqli_free_result($result);
+
+                    mysqli_close($conn);
                     ?>
                 </div>
             </div>
