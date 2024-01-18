@@ -151,7 +151,7 @@ $result = mysqli_query($conn, $sql);
                         <li><a href="#" style="font-size: 20px;">Capacity <span style="color: black; font-size: 20px;">4</span></a></li>
                         <li><a href="#" style="font-size: 20px;">Passenger <span style="color: black; font-size: 20px;"><?php echo $rows["capacity"]; ?></span></a></li>
                         <?php
-                        if($rows["capacity"] == 0){
+                        if($rows["availability"] == 0){
                         ?>
                         <li><a href="#" style="font-size: 20px;">Availability <span class="text-danger" style="color: black; font-size: 20px;">Out of Stock</span></a></li>
                         <li><a href="" style="font-size: 20px;"></a><p class="text-white"><a class="btn btn-primary btn-danger btn-sm zoom-out-image">Out of Stock</a></p></li>
