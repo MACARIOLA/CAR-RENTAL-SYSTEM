@@ -11,18 +11,30 @@ $result = mysqli_query($conn, $sql);
 ?>
 
 
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
-    <title>CarRental | Car Details</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ImperialDrive | Cars</title>
 
+      <!----------------
+            FONTS
+      ----------------->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+      <!----------------
+          TAB ICON
+      ----------------->
+    <link rel="icon" href="./images/idlogo.png" type="image/x-icon">
+
+      <!----------------
+         BOOTSTRAP CSS
+      ----------------->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -31,13 +43,18 @@ $result = mysqli_query($conn, $sql);
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/aos.css">
 
-    <!-- MAIN CSS -->
+      <!----------------
+           MAIN CSS
+      ----------------->
     <link rel="stylesheet" href="css/style.css">
-
   </head>
 
-  <body>
 
+
+  <body>
+    <!----------------
+          MY CSS
+    ----------------->
     <style>
       .site-navbar {
         position: fixed;
@@ -46,10 +63,110 @@ $result = mysqli_query($conn, $sql);
         backdrop-filter: blur(10px); 
         z-index: 1000;
       }
+
+      .zoom-out-image {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .zoom-out-image:hover {
+        transform: scale(1.05);
+      }
+
+      .zoom-out-image2 {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .zoom-out-image2:hover {
+        transform: scale(1.1);
+      }
+
+      .zoom-in-image {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .zoom-in-image:hover {
+        transform: scale(0.96);
+      }
+
+      #scrollBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        background-color: #007bff;
+        color: white;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+
+      #scrollBtn:hover {
+        background-color: #0056b3;
+      }
+
+      .text-justify {
+        text-align: justify;
+      }
+
+      .row-bordered {
+        border: 1px solid #63757E;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .row-bordered:hover {
+        background-color:  #f0f0f0;
+        transition: background-color 0.3s; 
+        border: 1px solid #DADADA;
+      }
+
+      .row-bordered:hover .meta {
+        color: #455A66;
+        transition: color 0.3s;
+      }
+
+      .accbtn {
+        color: #364D58;
+        width: 45px; 
+        height: 45px; 
+        border: 1px solid #63757E;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .accbtn:hover {
+        color: black;
+        border: 1px solid #364D58;
+      }
+
+      .custom-pagination a:hover {
+        background-color: #0056b3;
+      }
+
+      .custom-image-class {
+        max-width: 77%;
+        max-height: 77%; 
+        width: auto;
+        height: auto;
+      }
+
     </style>
     
-    <div class="site-wrap" id="home-section">
 
+
+      <!----------------
+        DETAILS SECTION
+      ----------------->
+      <div class="site-wrap" id="home-section">
+
+      <!----------------
+        NAVIGATION BAR
+      ----------------->
       <div class="site-mobile-menu site-navbar-target">
         <div class="site-mobile-menu-header">
           <div class="site-mobile-menu-close mt-3">
@@ -59,54 +176,47 @@ $result = mysqli_query($conn, $sql);
         <div class="site-mobile-menu-body"></div>
       </div>
 
-
-
       <header class="site-navbar site-navbar-target" role="banner">
-
         <div class="container">
           <div class="row align-items-center position-relative">
-
             <div class="col-3">
               <div class="site-logo">
-                <a href="home.html"><strong>CarRental</strong></a>
+                <a href="home.html" class="d-flex align-items-center">
+                  <img src="./images/idlogo.png" alt="IDLogo" class="img-fluid col-3 zoom-out-image">
+                </a>
               </div>
             </div>
-
-            <div class="col-9  text-right">
-              
+            <div class="col-9  text-center">
               <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-black"></span></a></span>
-
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li><a href="home.html" class="nav-link">Home</a></li>
-                  <li><a href="#" class="nav-link">About</a></li>
-                  <li><a href="services.php" class="nav-link">Services</a></li>
-                  <li><a href="booking.php" class="nav-link">Booking</a></li>
-                  <li><a href="carspage.php" class="nav-link">Cars</a></li>
-                  <li><a href="reviews.php" class="nav-link">Reviews</a></li>
-                  <li><a href="contact.php" class="nav-link">Contact Us</a></li>
+                  <li><a href="home.html" class="nav-link zoom-out-image"><b>Home</b></a></li>
+                  <li><a href="services.php" class="nav-link zoom-out-image"><b>Services</b></a></li>
+                  <li><a href="booking.php" class="nav-link zoom-out-image"><b>Booking</b></a></li>
+                  <li class="active"><a href="carspage.php" class="nav-link zoom-out-image"><b><b>Cars</b></b></a></li>
+                  <li><a href="reviews.php" class="nav-link zoom-out-image"><b>Reviews</b></a></li>
+                  <li style="margin-right: 215px;"><a href="contact.php" class="nav-link zoom-out-image"><b>Contact Us</b></a></li>
+                  <li><button type="button" class="accbtn nav-link zoom-out-image"><i class="fas fa-user"></i></button>
                 </ul>
               </nav>
             </div>
-
-            
           </div>
         </div>
-
       </header>
 
       
+
+      <!----------------
+          TOP LEVEL
+      ----------------->
       <div class="hero inner-page" style="background-image: url('images/hero_1_a.jpg');">
-        
         <div class="container">
           <div class="row align-items-end ">
-            <div class="col-lg-12">
-
+            <div class="col-lg-5">
               <div class="intro">
                 <h1><strong>Car Details</strong></h1>
-                <div class="pb-4"></div>
+                <div class="custom-breadcrumbs"><a href="home.html">Home</a> <span class="mx-2">/</span> <strong>Car Details</strong></div>
               </div>
-
             </div>
           </div>
         </div>
@@ -126,17 +236,15 @@ $result = mysqli_query($conn, $sql);
                 
                 <div class="row">
                     <div class="col-md-12">
-                        <img src="<?php echo $rows['image']; ?>" class="rounded img-fluid mx-auto d-block">
+                        <img src="<?php echo $rows['image']; ?>" class="rounded img-fluid mx-auto d-block zoom-in-image custom-image-class">
                         <h1 style="text-align:center;"><strong><?php echo $rows["name"]; ?></strong></h1>
-                        <div class="pb-4" style="text-align:center;"><strong class="text-black ">₱<?php echo $rows["price"]; ?>/day</strong></div>
-                        <!-- <center>
-                            <p class="text-white"><a href="transaction.php" class="btn btn-primary btn-sm zoom-out-image">Book Now</a></p>
-                        </center>-->
+                        <div class="pb-4" style="text-align:center;"><strong class="text-black ">₱<?php echo $rows["price"]; ?>/Hour</strong></div>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                   <div class="col-md-8 blog-content">
+                    <p class="lead text-justify"><?php echo $rows["information1"];?></p>
                     <p class="lead text-justify"><?php echo $rows["information2"];?></p>
                     <div class="pt-5"></div>
                   </div>
@@ -146,19 +254,19 @@ $result = mysqli_query($conn, $sql);
                       <div class="categories">
                         <h2>Categories</h2>
                         <br>
-                        <li><a href="#" style="font-size: 20px;">Body <span style="color: black; font-size: 20px;"><?php echo $rows["car_type"]; ?></span></a></li>
-                        <li><a href="#" style="font-size: 20px;">Doors <span style="color: black; font-size: 20px;"><?php echo $rows["doors"]; ?></span></a></li>
-                        <li><a href="#" style="font-size: 20px;">Capacity <span style="color: black; font-size: 20px;">4</span></a></li>
-                        <li><a href="#" style="font-size: 20px;">Passenger <span style="color: black; font-size: 20px;"><?php echo $rows["capacity"]; ?></span></a></li>
+                        <li><a style="font-size: 20px;">Body <span style="color: black; font-size: 20px;"><?php echo $rows["car_type"]; ?></span></a></li>
+                        <li><a style="font-size: 20px;">Doors <span style="color: black; font-size: 20px;"><?php echo $rows["doors"]; ?></span></a></li>
+                        <li><a style="font-size: 20px;">Capacity <span style="color: black; font-size: 20px;">4</span></a></li>
+                        <li><a style="font-size: 20px;">Passenger <span style="color: black; font-size: 20px;"><?php echo $rows["capacity"]; ?></span></a></li>
                         <?php
                         if($rows["availability"] == 0){
                         ?>
-                        <li><a href="#" style="font-size: 20px;">Availability <span class="text-danger" style="color: black; font-size: 20px;">Out of Stock</span></a></li>
+                        <li><a style="font-size: 20px;">Availability <span class="text-danger" style="color: black; font-size: 20px;">Out of Stock</span></a></li>
                         <li><a href="" style="font-size: 20px;"></a><p class="text-white"><a class="btn btn-primary btn-danger btn-sm zoom-out-image">Out of Stock</a></p></li>
                         <?php
                         }else{
                         ?>
-                        <li><a href="" style="font-size: 20px;">Availability <span class="text-success" style="color: black; font-size: 20px;"><?php echo $rows["availability"]; ?> Cars</span></a></li>
+                        <li><a style="font-size: 20px;">Availability <span class="text-success" style="color: black; font-size: 20px;"><?php echo $rows["availability"]; ?> Cars</span></a></li>
                         <li><a href="" style="font-size: 20px;"></a><p class="text-white"><a href="transaction.php?id=<?php echo $rows['car_id']; ?>" class="btn btn-primary btn-sm zoom-out-image">Book Now</a></p></li>
                         <?php
                         }
@@ -166,16 +274,17 @@ $result = mysqli_query($conn, $sql);
                       </div>
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </div>
           </div>
         </div>
-              <?php
-                  }
-                }
-              ?>
+        <?php
+          }
+        }
+        ?>
+
+
 
       <!----------------
           RENT SHRTCT
@@ -194,7 +303,11 @@ $result = mysqli_query($conn, $sql);
         </div>
       </div>
 
-      
+
+
+      <!----------------
+            FOOTER
+      ----------------->
     <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -248,8 +361,48 @@ $result = mysqli_query($conn, $sql);
       </div>
     </footer>
 
-    </div>
 
+      <!----------------
+            GO UP
+      ----------------->
+      <button onclick="scrollToTop()" id="scrollBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+      <!----------------
+            MY JS
+      ----------------->
+    <script>
+      function scrollToTop() {
+        const scrollDuration = 400; // Duration of the scroll animation in milliseconds
+        const scrollStep = -window.scrollY / (scrollDuration / 15);
+        
+        const scrollInterval = setInterval(function() {
+          if (window.scrollY !== 0) {
+            window.scrollBy(0, scrollStep);
+          } else {
+            clearInterval(scrollInterval);
+          }
+        }, 15);
+      }
+      
+      window.onscroll = function() {
+        const scrollBtn = document.getElementById("scrollBtn");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      };
+
+      document.querySelector('.accbtn').addEventListener('click', function() {
+        window.location.href = 'accounts.html';
+      });
+      </script>
+
+
+
+      <!----------------
+         BOOTSTRAP JS
+      ----------------->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -262,7 +415,9 @@ $result = mysqli_query($conn, $sql);
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/aos.js"></script>
 
+      <!----------------
+           MAIN JS
+      ----------------->
     <script src="js/main.js"></script>
-
   </body>
 </html>
