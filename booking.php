@@ -275,161 +275,6 @@
             </div>
           </div>
           <?php } ?>
-
-          <!-- <div class="col-md-6 col-lg-4 mb-4">
-            <div class="car-list-card listing d-block  align-items-stretch">
-              <div class="listing-img h-100 mr-4">
-                <img src="images/car_5.jpg" alt="Image" class="img-fluid zoom-out-image">
-              </div>
-              <div class="listing-contents h-100">
-                <h3>Nissan Moco</h3>
-                <div class="rent-price">
-                  <strong>₱650.00</strong><span class="mx-1">/</span>day
-                </div>
-                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Body:</span><br>
-                    <span class="number">MPV</span><br>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Doors:</span><br>
-                    <span class="number">4</span><br>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Passenger:</span><br>
-                    <span class="number">4</span><br>
-                  </div>
-                </div>
-                <div class="text-center zoom-out-image">
-                  <p><a href="carspage.php" class="btn btn-primary btn-sm">Details</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="car-list-card listing d-block  align-items-stretch">
-              <div class="listing-img h-100 mr-4">
-                <img src="images/car_4.jpg" alt="Image" class="img-fluid zoom-out-image">
-              </div>
-              <div class="listing-contents h-100">
-                <h3>Honda Fitta</h3>
-                <div class="rent-price">
-                  <strong>₱740.00</strong><span class="mx-1">/</span>day
-                </div>
-                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Body:</span><br>
-                    <span class="number">Hatchback</span><br>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Doors:</span><br>
-                    <span class="number">4</span><br>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Passenger:</span><br>
-                    <span class="number">4</span><br>
-                  </div>
-                </div>
-                <div class="text-center zoom-out-image">
-                  <p><a href="carspage.php" class="btn btn-primary btn-sm">Details</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="car-list-card listing d-block  align-items-stretch">
-              <div class="listing-img h-100 mr-4">
-                <img src="images/car_3.jpg" alt="Image" class="img-fluid zoom-out-image">
-              </div>
-              <div class="listing-contents h-100">
-                <h3>Skoda Laura</h3>
-                <div class="rent-price">
-                  <strong>₱1,150.00</strong><span class="mx-1">/</span>day
-                </div>
-                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Body:</span><br>
-                    <span class="number">Sedan</span><br>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Doors:</span><br>
-                    <span class="number">4</span><br>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Passenger:</span><br>
-                    <span class="number">4</span><br>
-                  </div>
-                </div>
-                <div class="text-center zoom-out-image">
-                  <p><a href="carspage.php" class="btn btn-primary btn-sm">Details</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="car-list-card listing d-block  align-items-stretch">
-              <div class="listing-img h-100 mr-4">
-                <img src="images/car_2.jpg" alt="Image" class="img-fluid zoom-out-image">
-              </div>
-              <div class="listing-contents h-100">
-                <h3>Mazda LaPuta</h3>
-                <div class="rent-price">
-                  <strong>₱980.00</strong><span class="mx-1">/</span>day
-                </div>
-                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Body:</span><br>
-                    <span class="number">Kei</span><br>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Doors:</span><br>
-                    <span class="number">4</span><br>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Passenger:</span><br>
-                    <span class="number">4</span><br>
-                  </div>
-                </div>
-                <div class="text-center zoom-out-image">
-                  <p><a href="carspage.php" class="btn btn-primary btn-sm">Details</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="car-list-card listing d-block  align-items-stretch">
-              <div class="listing-img h-100 mr-4">
-                <img src="images/car_1.jpg" alt="Image" class="img-fluid zoom-out-image">
-              </div>
-              <div class="listing-contents h-100">
-                <h3>Buick LaCrosse</h3>
-                <div class="rent-price">
-                  <strong>₱910.00</strong><span class="mx-1">/</span>day
-                </div>
-                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Body:</span><br>
-                    <span class="number">Sedan</span><br>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Doors:</span><br>
-                    <span class="number">4</span><br>
-                  </div>
-                  <div class="listing-feature pr-4">
-                    <span class="caption">Passenger:</span><br>
-                    <span class="number">4</span><br>
-                  </div>
-                </div>
-                <div class="text-center zoom-out-image">
-                  <p><a href="carspage.html" class="btn btn-primary btn-sm">Details</a></p>
-                </div>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -566,27 +411,28 @@
       <!----------------
             FOOTER
       ----------------->
-    <footer class="site-footer">
+      <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
-            <h2 class="footer-heading mb-4"><strong>About Us</strong></h2>
-            <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey, your decision.</p>
+            <h2 class="footer-heading mb-4">About Us</h2>
+            <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey, your
+              decision.</p>
           </div>
           <div class="col-lg-8 ml-auto">
             <div class="row">
               <div class="col-lg-3">
-                <h2 class="footer-heading mb-4"><strong>Quick Links</strong></h2>
+                <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
                   <li><a href="home.html">About Us</a></li>
                   <li><a href="services.php">Services</a></li>
                   <li><a href="booking.php">Booking</a></li>
-                  <li><a href="#">News</a></li>
+                  <li><a href="carspage.php">Cars</a></li>
                   <li><a href="reviews.php">Reviews</a></li>
                 </ul>
               </div>
               <div class="col-lg-3">
-                <h2 class="footer-heading mb-4"><strong>Resources</strong></h2>
+                <h2 class="footer-heading mb-4">Resources</h2>
                 <ul class="list-unstyled">
                   <li><a href="#">FAQs</a></li>
                   <li><a href="#">Policies</a></li>
@@ -596,7 +442,7 @@
                 </ul>
               </div>
               <div class="col-lg-3">
-                <h2 class="footer-heading mb-4"><strong>Support</strong></h2>
+                <h2 class="footer-heading mb-4">Support</h2>
                 <ul class="list-unstyled">
                   <li><a href="#">Facebook</a></li>
                   <li><a href="#">Twitter</a></li>
@@ -606,10 +452,10 @@
                 </ul>
               </div>
               <div class="col-lg-3">
-                <h2 class="footer-heading mb-4"><strong>Company</strong></h2>
+                <h2 class="footer-heading mb-4">Company</h2>
                 <ul class="list-unstyled">
                   <li><a href="home.html">About Us</a></li>
-                  <li><a href="#">Our Team</a></li>
+                  <li><a href="home.html">Our Team</a></li>
                   <li><a href="contact.php">Contact Us</a></li>
                 </ul>
               </div>
@@ -624,7 +470,7 @@
       <!----------------
             GO UP
       ----------------->
-    <button onclick="scrollToTop()" id="scrollBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+      <button onclick="scrollToTop()" id="scrollBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
       <!----------------
             MY JS
@@ -653,7 +499,7 @@
       };
 
       document.querySelector('.accbtn').addEventListener('click', function() {
-        window.location.href = 'accounts.html';
+        window.location.href = 'accounts.php';
       });
       </script>
 
