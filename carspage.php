@@ -182,6 +182,10 @@ $result = mysqli_query($conn, $sql);
       .card-text{
         flex-grow: 1;
       }
+
+      .custom-pagination a.active {
+        background-color: #0056b3;
+      }
     </style>
     
 
@@ -340,9 +344,10 @@ $result = mysqli_query($conn, $sql);
           <div class="col-5 m-5">
             <div class="custom-pagination">
               <?php
-              for($counter = 1; $counter <= $pages; $counter++){
+              for($counter = 1; $counter <= $pages; $counter++) {
+                $activeClass = ($counter == $_GET['page-row']) ? 'active' : '';
               ?>
-                <a href="?page-row=<?php echo $counter ?>"><?php echo $counter ?></a>
+                <a href="?page-row=<?php echo $counter ?>" class="<?php echo $activeClass ?>"><?php echo $counter ?></a>
               <?php
               }
               ?>
