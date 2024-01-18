@@ -248,65 +248,65 @@
       </div>
   
       <div class="row">
-      <?php
-        $conn = mysqli_connect('localhost', 'root', '', 'id_dtb');
+        <?php
+          $conn = mysqli_connect('localhost', 'root', '', 'id_dtb');
 
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
+          if (!$conn) {
+              die("Connection failed: " . mysqli_connect_error());
+          }
 
-        $sql = "SELECT * FROM reviews_tbl ORDER BY Review_ID DESC LIMIT 9";
-        $result = mysqli_query($conn, $sql);
+          $sql = "SELECT * FROM reviews_tbl ORDER BY Review_ID DESC LIMIT 9";
+          $result = mysqli_query($conn, $sql);
 
-        $reviewCounter = 0;
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo '<div class="col-lg-4 mb-4">';
-            echo '<div class="card testimonial-2 zoom-out-image">';
-            echo '<blockquote class="mb-4 text-justify">';
-            echo '<p>"' . $row['Customer_Comment'] . '"</p>';
-            echo '</blockquote>';
+          $reviewCounter = 0;
+          while ($row = mysqli_fetch_assoc($result)) {
+              echo '<div class="col-lg-4 mb-4">';
+              echo '<div class="card testimonial-2 zoom-out-image">';
+              echo '<blockquote class="mb-4 text-justify">';
+              echo '<p>"' . $row['Customer_Comment'] . '"</p>';
+              echo '</blockquote>';
 
-            echo '<div class="card-body">';
-            echo '<div class="d-flex align-items-center">';
+              echo '<div class="card-body">';
+              echo '<div class="d-flex align-items-center">';
 
-            // Check if the key exists and is not null before using it
-            /*if (isset($row["Profile_pic"]) && !is_null($row["Profile_pic"])) {
-                $profilePic = $row["Profile_pic"];
-                echo '<img class="profile" src="' . $profilePic . '" alt="Image" class="img-fluid rounded-circle mr-3" style="height: 25px; width: auto;">';
-            } else {
-                // Display SVG outline of a person if profile pic is null
-                echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
-                echo '<circle cx="12" cy="7" r="4"/>';
-                echo '<path d="M12 11c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm6 11h-12"/>';
-                echo '</svg>';
-            }*/
+              // Check if the key exists and is not null before using it
+              /*if (isset($row["Profile_pic"]) && !is_null($row["Profile_pic"])) {
+                  $profilePic = $row["Profile_pic"];
+                  echo '<img class="profile" src="' . $profilePic . '" alt="Image" class="img-fluid rounded-circle mr-3" style="height: 25px; width: auto;">';
+              } else {
+                  // Display SVG outline of a person if profile pic is null
+                  echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
+                  echo '<circle cx="12" cy="7" r="4"/>';
+                  echo '<path d="M12 11c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm6 11h-12"/>';
+                  echo '</svg>';
+              }*/
 
-            echo '<div class="author-name row justify-content-center">';
-            $Name = isset($row["name"]) ? $row["name"] : 'Unknown';
-            
-            // Modify this line to include bold, increased font size, and center it
-            echo '<span class="d-block"><b style="font-size: 19px;">' . $Name . '</b></span>';
-            
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
+              echo '<div class="author-name row justify-content-center">';
+              $Name = isset($row["name"]) ? $row["name"] : 'Unknown';
+              
+              // Modify this line to include bold, increased font size, and center it
+              echo '<span class="d-block"><b style="font-size: 19px;">~' . $Name . '</b></span>';
+              
+              echo '</div>';
+              echo '</div>';
+              echo '</div>';
 
-            echo '</div>';
-            echo '</div>';
+              echo '</div>';
+              echo '</div>';
 
-            $reviewCounter++;
-        }
+              $reviewCounter++;
+          }
 
-        echo '</div>';
+          echo '</div>';
 
-        echo '</div>';
+          echo '</div>';
 
-        echo '</div>';
+          echo '</div>';
 
-        mysqli_free_result($result);
+          mysqli_free_result($result);
 
-        mysqli_close($conn);
-      ?>
+          mysqli_close($conn);
+        ?>
 
 
 
