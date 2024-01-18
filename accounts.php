@@ -325,6 +325,21 @@ if (isset($_SESSION["Username"])) {
             #save-changes-container input {
                 margin: 0 auto; /* Center the button horizontally */
             }
+
+            .profile-container {
+                width: 40px;
+                height: 40px;
+                overflow: hidden;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            .profile {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
         </style>
 
 
@@ -427,15 +442,20 @@ if (isset($_SESSION["Username"])) {
             }
         } ?>
   
-            <?php if (isset($_SESSION["Username"])) {
-                $username = $_SESSION["Username"];
-                $sql = "SELECT * FROM customers_tbl WHERE Email = '$username'";
-                $result = mysqli_query($conn, $sql);
-
-                if ($result && mysqli_num_rows($result) > 0) {
-                    $userProfile = mysqli_fetch_assoc($result);
-                }
-            } else {
+            <?php 
+                if (isset($_SESSION["Username"])) {
+                    $username = $_SESSION["Username"];
+                    $sql = "SELECT * FROM customers_tbl WHERE Email = '$username'";
+                    $result = mysqli_query($conn, $sql);
+                    
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        $userProfile = mysqli_fetch_assoc($result);
+                        $profileImage = isset($userProfile["Profile_pic"]) ? 'data:image;base64,' . base64_encode($userProfile["Profile_pic"]) : null;
+            
+                        // Add this line to get the latest profile picture URL
+                        $latestProfilePicURL = $profileImage;
+                    }
+                }  else {
                 echo "user not login";
             } ?>
 
@@ -478,25 +498,27 @@ if (isset($_SESSION["Username"])) {
                         echo '<div class="col-lg-4 mb-4">';
                         echo '<div class="card testimonial-2 zoom-out-image">';
                         echo '<blockquote class="mb-4 text-justify">';
-                        echo '<p>"' . $row["Customer_Comment"] . '"</p>';
-                        echo "</blockquote>";
-
+                        echo '<p>"' . $row['Customer_Comment'] . '"</p>';
+                        echo '</blockquote>';
+                
                         echo '<div class="card-body">';
                         echo '<div class="d-flex align-items-center">';
-
-                        if (
-                            isset($row["Profile_pic"]) &&
-                            !is_null($row["Profile_pic"])
-                        ) {
-                            $profilePic = $row["Profile_pic"];
-                            echo '<img class="profile" src="' .
-                                $profilePic .
-                                '" alt="Image" class="img-fluid rounded-circle mr-3" style="height: 25px; width: auto;">';
+                
+                        // Fetch the latest profile picture URL for the testimonial author
+                        $testimonialAuthorEmail = $row['Email'];
+                        $testimonialAuthorProfilePic = getLatestProfilePicURL($conn, $testimonialAuthorEmail);
+                
+                        if (!empty($testimonialAuthorProfilePic)) {
+                            echo '<div class="profile-container">';
+                            echo '<img class="profile" src="' . $testimonialAuthorProfilePic . '" alt="Image">';
+                            echo '</div>';
                         } else {
+                            echo '<div class="profile-container">';
                             echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
                             echo '<circle cx="12" cy="7" r="4"/>';
                             echo '<path d="M12 11c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm6 11h-12"/>';
-                            echo "</svg>";
+                            echo '</svg>';
+                            echo '</div>';
                         }
 
                         echo '<div class="author-name">';
@@ -514,6 +536,18 @@ if (isset($_SESSION["Username"])) {
                         $reviewCounter++;
                     }
 
+                    function getLatestProfilePicURL($conn, $email) {
+                        $sql = "SELECT Profile_pic FROM customers_tbl WHERE Email = '$email'";
+                        $result = mysqli_query($conn, $sql);
+                
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            $userProfile = mysqli_fetch_assoc($result);
+                            return isset($userProfile["Profile_pic"]) ? 'data:image;base64,' . base64_encode($userProfile["Profile_pic"]) : '';
+                        }
+                
+                        return '';
+                    }
+
                     echo "</div>";
 
                     echo "</div>";
@@ -523,6 +557,8 @@ if (isset($_SESSION["Username"])) {
                     mysqli_free_result($result);
 
                     mysqli_close($conn);
+
+                    
                     ?>
                 </div>
             </div>
