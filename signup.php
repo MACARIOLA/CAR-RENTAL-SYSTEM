@@ -58,7 +58,20 @@
           <svg class="asm-form__icon append" data-action="toggle-show-password" data-input="#registerPasswordRetry" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"/></svg>
           <div class="asm-form__error">Passwords are mismatch</div>
         </div>
-    
+        <div class="asm-form__inputbox">
+                <svg class="asm-form__icon prepend" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/></svg>
+                <select class="asm-form__input" name="securityQuestion" id="securityQuestion" required>
+                    <option value="" disabled selected>Select Security Question</option>
+                    <option value="q1">What is your mother's maiden name?</option>
+                    <option value="q2">In which city were you born?</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <label class="asm-form__inputlabel" for="securityQuestion"></label>
+            </div>
+        <div class="asm-form__inputbox">
+                <input class="asm-form__input" type="text" name="Securitypassword" id="Securitypassword" required placeholder="Securitypassword">
+                <label class="asm-form__inputlabel" for="Securitypassword">Securitypassword</label>
+            </div>
         </div> 
         <?php
 include('con_db.php');
@@ -71,6 +84,8 @@ if (isset($_POST['Button'])) {
     $MI = $_POST['MI'];
     $Email = $_POST['email'];
     $Cont = $_POST['phone'];
+    $SecQ = $_POST['securityQuestion'];
+    $Secpass = $_POST['Securitypassword'];
 
     // Check if the Email already exists in customers_tbl
     $check_query = "SELECT * FROM customers_tbl WHERE Email = '$Email'";
@@ -82,7 +97,7 @@ if (isset($_POST['Button'])) {
     } else {
         // User does not exist, proceed to insert the data
         // Create the SQL query
-        $sql = "INSERT INTO customers_tbl ( First_name, Last_name, MI, Email, Contact_number, Password) VALUES ( '$Fname', '$Lname', '$MI', '$Email', '$Cont', '$passw')";
+        $sql = "INSERT INTO customers_tbl ( First_name, Last_name, MI, Email, Contact_number, Password,Sec_Q,Retrieval_password) VALUES ( '$Fname', '$Lname', '$MI', '$Email', '$Cont', '$passw', '$SecQ', '$Secpass')";
 
         // Execute the query
         $result = mysqli_query($conn, $sql);
