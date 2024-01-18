@@ -290,106 +290,106 @@
 
 
 
-    <!----------------
-          FOOTER
-    ----------------->
-    <footer class="site-footer">
-        <div class="container">
+      <!----------------
+            FOOTER
+      ----------------->
+      <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <h2 class="footer-heading mb-4">About Us</h2>
+            <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey, your
+              decision.</p>
+          </div>
+          <div class="col-lg-8 ml-auto">
             <div class="row">
-                <div class="col-lg-3">
-                    <h2 class="footer-heading mb-4">About Us</h2>
-                    <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey,
-                        your decision.</p>
-                </div>
-                <div class="col-lg-8 ml-auto">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <h2 class="footer-heading mb-4">Quick Links</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="home.html">About Us</a></li>
-                                <li><a href="services.php">Services</a></li>
-                                <li><a href="booking.php">Booking</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="reviews.php">Reviews</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3">
-                            <h2 class="footer-heading mb-4">Resources</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="#">Policies</a></li>
-                                <li><a href="#">Terms of Service</a></li>
-                                <li><a href="#">Privacy</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3">
-                            <h2 class="footer-heading mb-4">Support</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Facebook</a></li>
-                                <li><a href="#">Twitter</a></li>
-                                <li><a href="#">Instagram</a></li>
-                                <li><a href="#">LinkedIn</a></li>
-                                <li><a href="#">Youtube</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3">
-                            <h2 class="footer-heading mb-4">Company</h2>
-                            <ul class="list-unstyled">
-                                <li><a href="home.html">About Us</a></li>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="home.html">About Us</a></li>
+                  <li><a href="services.php">Services</a></li>
+                  <li><a href="booking.php">Booking</a></li>
+                  <li><a href="carspage.php">Cars</a></li>
+                  <li><a href="reviews.php">Reviews</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Resources</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Policies</a></li>
+                  <li><a href="#">Terms of Service</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="contact.php">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Support</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">LinkedIn</a></li>
+                  <li><a href="#">Youtube</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Company</h2>
+                <ul class="list-unstyled">
+                  <li><a href="home.html">About Us</a></li>
+                  <li><a href="home.html">Our Team</a></li>
+                  <li><a href="contact.php">Contact Us</a></li>
+                </ul>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </footer>
 
+    
 
+      <!----------------
+            GO UP
+      ----------------->
+      <button onclick="scrollToTop()" id="scrollBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
-    <!----------------
-          GO UP
-    ----------------->
-    <button onclick="scrollToTop()" id="scrollBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-
-    <!----------------
-          MY JS
-    ----------------->
+      <!----------------
+            MY JS
+      ----------------->
     <script>
-        function scrollToTop() {
-            const scrollDuration = 400; // Duration of the scroll animation in milliseconds
-            const scrollStep = -window.scrollY / (scrollDuration / 15);
-
-            const scrollInterval = setInterval(function () {
-                if (window.scrollY !== 0) {
-                    window.scrollBy(0, scrollStep);
-                } else {
-                    clearInterval(scrollInterval);
-                }
-            }, 15);
+      function scrollToTop() {
+        const scrollDuration = 400; // Duration of the scroll animation in milliseconds
+        const scrollStep = -window.scrollY / (scrollDuration / 15);
+        
+        const scrollInterval = setInterval(function() {
+          if (window.scrollY !== 0) {
+            window.scrollBy(0, scrollStep);
+          } else {
+            clearInterval(scrollInterval);
+          }
+        }, 15);
+      }
+      
+      window.onscroll = function() {
+        const scrollBtn = document.getElementById("scrollBtn");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
         }
+      };
 
-        window.onscroll = function () {
-            const scrollBtn = document.getElementById("scrollBtn");
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                scrollBtn.style.display = "block";
-            } else {
-                scrollBtn.style.display = "none";
-            }
-        };
-
-        document.querySelector('.accbtn').addEventListener('click', function () {
-            window.location.href = 'accounts.html';
-        });
-    </script>
+      document.querySelector('.accbtn').addEventListener('click', function() {
+        window.location.href = 'accounts.php';
+      });
+      </script>
 
 
 
-    <!----------------
-       BOOTSTRAP JS
-    ----------------->
+      <!----------------
+         BOOTSTRAP JS
+      ----------------->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -402,9 +402,9 @@
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/aos.js"></script>
 
-    <!----------------
-          MAIN JS
-    ----------------->
+      <!----------------
+           MAIN JS
+      ----------------->
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
