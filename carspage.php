@@ -279,7 +279,7 @@ $result = mysqli_query($conn, $sql);
       <!----------------
            Car List
       ----------------->
-    <div class="site-section bg-light">
+    <div class="site-section bg-light" id="featured-cars">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
@@ -344,10 +344,12 @@ $result = mysqli_query($conn, $sql);
           <div class="col-5 m-5">
             <div class="custom-pagination">
               <?php
-              for($counter = 1; $counter <= $pages; $counter++) {
-                $activeClass = ($counter == $_GET['page-row']) ? 'active' : '';
+              $currentPage = isset($_GET['page-row']) ? $_GET['page-row'] : 1;
+
+              for ($counter = 1; $counter <= $pages; $counter++) {
+                $activeClass = ($currentPage == $counter) ? 'active' : '';
               ?>
-                <a href="?page-row=<?php echo $counter ?>" class="<?php echo $activeClass ?>"><?php echo $counter ?></a>
+                <a href="?page-row=<?php echo $counter ?>#featured-cars" class="<?php echo $activeClass ?>"><?php echo $counter ?></a>
               <?php
               }
               ?>
@@ -355,7 +357,6 @@ $result = mysqli_query($conn, $sql);
           </div>
         </div>
       </div>
-    </div>
 
 
       <!----------------
