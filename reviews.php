@@ -139,6 +139,10 @@
       height: 100%;
       flex-direction: column;
     }
+
+    .card-text{
+      flex-grow: 1;
+    }
   </style>
 
 
@@ -176,8 +180,8 @@
             <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
                 <li><a href="home.html" class="nav-link zoom-out-image"><b>Home</b></a></li>
-                <li><a href="services.php" class="nav-link zoom-out-image"><b>Services</b></a></li>
-                <li><a href="booking.php" class="nav-link zoom-out-image"><b>Booking</b></a></li>
+                <li><a href="services.html" class="nav-link zoom-out-image"><b>Services</b></a></li>
+                <li><a href="booking.html" class="nav-link zoom-out-image"><b>Booking</b></a></li>
                 <li><a href="carspage.php" class="nav-link zoom-out-image"><b>Cars</b></a></li>
                 <li class="active"><a href="reviews.php" class="nav-link zoom-out-image"><b><b>Reviews</b></b></a></li>
                 <li style="margin-right: 215px;"><a href="contact.php" class="nav-link zoom-out-image"><b>Contact
@@ -249,57 +253,56 @@
         </div>
       </div>
   
+      <?php
+              $conn = mysqli_connect('localhost', 'root', '', 'id_dtb');
+          
+              if (!$conn) {
+                  die("Connection failed: " . mysqli_connect_error());
+              }
+              ?>
+  
       <div class="row">
   
         <?php
+                // Fetch the latest 9 testimonials from the database
+                $sql = "SELECT * FROM reviews_tbl ORDER BY Review_ID DESC LIMIT 9";
+                $result = mysqli_query($conn, $sql);
+                // Display up to 9 testimonials
+                $reviewCounter = 0;
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
   
-        $conn = mysqli_connect('localhost', 'root', '', 'id_dtb');
+        <div class="col-md-4 col-6 gy-4">
+          <div class="card testimonial-2 zoom-out-image">
+            <center>
+              <?php echo '<img class="profile img-fluid rounded-circle mr-3 center" src="' . $row["Profile_pic"] . '" alt="Image" 
+                style="height: 75px; width: auto;">'; ?>
+            </center>
+            <div class="card-body">
+              <blockquote class="mb-4 text-justify">
+                <p>
+                  "<?php echo $row["Customer_Comment"]; ?>"
+                </p>
+              </blockquote>
+            </div>
+            <div class="text-end"> -
+              <?php echo $row["First_name"]; ?>
+              <?php echo $row["Last_name"]; ?>
+            </div>
+          </div>
+        </div>
+        <?php $reviewCounter++; } ?>
+      </div> <!-- Close the row -->
+    </div> <!-- Close the container -->
+  </div> <!-- Close the site-section --> 
   
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
+  <?php
+  // Close the result set
+  mysqli_free_result($result);
   
-        // Fetch the latest 9 testimonials from the database
-        $sql = "SELECT * FROM reviews_tbl ORDER BY Review_ID DESC LIMIT 9";
-        $result = mysqli_query($conn, $sql);
-  
-        // Display up to 9 testimonials
-        $reviewCounter = 0;
-        while ($row = mysqli_fetch_assoc($result)) {
-          echo '<div class="col-lg-4 mb-4">';
-          echo '<div class="card testimonial-2 zoom-out-image">';
-          echo '<blockquote class="mb-4 text-justify">';
-          echo '<p>"' . $row['Customer_Comment'] . '"</p>';
-          echo '</blockquote>';
-  
-          echo '<div class="card-body">';
-          echo '<div class="d-flex align-items-center">';
-          echo '<img class="profile" src="' . $row["Profile_pic"] . '" alt="Image" class="img-fluid rounded-circle mr-3" style="height: 55px; width: auto;">';
-          echo '<div class="author-name">';
-          echo '<span class="d-block"> ' . $row["First_name"] . ' ' . $row["Last_name"] . ' </span>';
-          echo '</div>';
-          echo '</div>';
-          echo '</div>';
-          
-          echo '</div>';
-          echo '</div>';
-  
-          $reviewCounter++;
-        }
-  
-       echo '</div>'; // Close the row
-       
-       echo '</div>'; // Close the container
-       echo '</div>'; // Close the site-section
-  
-       // Close the result set
-       mysqli_free_result($result);
-  
-       // Close the database connection
-       mysqli_close($conn);
-  
+  // Close the database connection
+  mysqli_close($conn);
   ?>
-
         <!----------------
         REVIEW SHRTSCT
       ----------------->
@@ -339,9 +342,9 @@
                     <h2 class="footer-heading mb-4">Quick Links</h2>
                     <ul class="list-unstyled">
                       <li><a href="home.html">About Us</a></li>
-                      <li><a href="services.php">Services</a></li>
-                      <li><a href="booking.php">Booking</a></li>
-                      <li><a href="#">News</a></li>
+                      <li><a href="services.html">Services</a></li>
+                      <li><a href="booking.html">Booking</a></li>
+                      <li><a href="news.html">News</a></li>
                       <li><a href="reviews.php">Reviews</a></li>
                     </ul>
                   </div>
@@ -369,7 +372,7 @@
                     <h2 class="footer-heading mb-4">Company</h2>
                     <ul class="list-unstyled">
                       <li><a href="home.html">About Us</a></li>
-                      <li><a href="#">Our Team</a></li>
+                      <li><a href="about.html">Our Team</a></li>
                       <li><a href="contact.php">Contact Us</a></li>
                     </ul>
                   </div>
