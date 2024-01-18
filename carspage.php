@@ -215,7 +215,7 @@ $result = mysqli_query($conn, $sql);
                   <li><a href="services.html" class="nav-link zoom-out-image"><b>Services</b></a></li>
                   <li><a href="booking.html" class="nav-link zoom-out-image"><b>Booking</b></a></li>
                   <li class="active"><a href="carspage.php" class="nav-link zoom-out-image"><b><b>Cars</b></b></a></li>
-                  <li><a href="reviews.html" class="nav-link zoom-out-image"><b>Reviews</b></a></li>
+                  <li><a href="reviews.php" class="nav-link zoom-out-image"><b>Reviews</b></a></li>
                   <li style="margin-right: 215px;"><a href="contact.php" class="nav-link zoom-out-image"><b>Contact Us</b></a></li>
                   <li><button type="button" class="accbtn nav-link zoom-out-image"><i class="fas fa-user"></i></button>
                 </ul>
@@ -284,19 +284,19 @@ $result = mysqli_query($conn, $sql);
             <div class="card">
               <a href="details.php?id=<?php echo $rows['car_id']; ?>"><img src="<?php echo $rows["image"]; ?>" alt="Image" class="img-fluid zoom-out-image card-img-top img-fit"></a>
               <?php
-              if($rows["capacity"] == 0){
+              if($rows["availability"] == 0){
               ?>
               <div class="card-body">
                 <h5><strong><?php echo $rows["name"]; ?></strong></h5>
                 <div class="rent-price text-primary">₱<?php echo $rows["price"]; ?><strong>/day</strong></div>
                 <p class="card-text">
-                  <span class="pr-2">Body:</span>
-                  <span class="pr-2">CAR</span>
-                  <span class="caption pr-2">Doors:</span>
-                  <span class="number pr-2"><?php echo $rows["doors"]; ?></span>
+                  <span class="pr-2">Doors:</span>
+                  <span class="pr-2"><?php echo $rows["doors"]; ?></span>
+                  <span class="caption pr-2">Capacity:</span>
+                  <span class="number pr-2"><?php echo $rows["capacity"]; ?></span>
                   <span class="caption pr-2">Availability:</span>
                   <span class="number text-danger pr-2">0</span><br><br>
-                  <span class="text-justify"><?php echo $rows["information"]; ?></span>
+                  <span class="text-justify"><?php echo $rows["information1"]; ?></span>
                 </p>
                 <div class="text-end">
                   <a class="btn btn-primary btn-danger btn-sm zoom-out-image text-white">Out of Stock</a>
@@ -309,16 +309,16 @@ $result = mysqli_query($conn, $sql);
                 <h5><strong><?php echo $rows["name"]; ?></strong></h5>
                 <div class="rent-price text-primary">₱<?php echo $rows["price"]; ?><strong>/day</strong></div>
                 <p class="card-text">
-                  <span class="pr-2">Body:</span>
-                  <span class="pr-2">CAR</span>
-                  <span class="caption pr-2">Doors:</span>
-                  <span class="number pr-2"><?php echo $rows["doors"]; ?></span>
+                  <span class="pr-2">Doors:</span>
+                  <span class="pr-2"><?php echo $rows["doors"]; ?></span>
+                  <span class="caption pr-2">Capacity:</span>
+                  <span class="number pr-2"><?php echo $rows["capacity"]; ?></span>
                   <span class="caption pr-2">Availability:</span>
-                  <span class="number text-success pr-2"><?php echo $rows["capacity"]; ?></span><br><br>
-                  <span class="text-justify"><?php echo $rows["information"]; ?></span>
+                  <span class="number text-success pr-2"><?php echo $rows["availability"]; ?></span><br><br>
+                  <span class="text-justify"><?php echo $rows["information1"]; ?></span>
                 </p>
                 <div class="text-end">
-                  <a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a>
+                  <a href="transaction.php?id=<?php echo $rows['car_id']; ?>" class="btn btn-primary btn-sm zoom-out-image">Rent Now</a>
                 </div>
               </div>
               <?php
@@ -395,7 +395,7 @@ $result = mysqli_query($conn, $sql);
                   <li><a href="#">Policies</a></li>
                   <li><a href="#">Terms of Service</a></li>
                   <li><a href="#">Privacy</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="contact.php">Contact Us</a></li>
                 </ul>
               </div>
               <div class="col-lg-3">
@@ -413,7 +413,7 @@ $result = mysqli_query($conn, $sql);
                 <ul class="list-unstyled">
                   <li><a href="home.html">About Us</a></li>
                   <li><a href="about.html">Our Team</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="contact.php">Contact Us</a></li>
                 </ul>
               </div>
             </div>
