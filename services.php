@@ -388,60 +388,60 @@
       <!----------------
             FOOTER
       ----------------->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <h2 class="footer-heading mb-4">About Us</h2>
-          <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey, your
-            decision.</p>
-        </div>
-        <div class="col-lg-8 ml-auto">
-          <div class="row">
-            <div class="col-lg-3">
-              <h2 class="footer-heading mb-4">Quick Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="home.html">About Us</a></li>
-                <li><a href="services.php">Services</a></li>
-                <li><a href="booking.php">Booking</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="reviews.php">Reviews</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-3">
-              <h2 class="footer-heading mb-4">Resources</h2>
-              <ul class="list-unstyled">
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Policies</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-3">
-              <h2 class="footer-heading mb-4">Support</h2>
-              <ul class="list-unstyled">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">LinkedIn</a></li>
-                <li><a href="#">Youtube</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-3">
-              <h2 class="footer-heading mb-4">Company</h2>
-              <ul class="list-unstyled">
-                <li><a href="home.html">About Us</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
-              </ul>
+      <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <h2 class="footer-heading mb-4">About Us</h2>
+            <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey, your
+              decision.</p>
+          </div>
+          <div class="col-lg-8 ml-auto">
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="home.html">About Us</a></li>
+                  <li><a href="services.php">Services</a></li>
+                  <li><a href="booking.php">Booking</a></li>
+                  <li><a href="carspage.php">Cars</a></li>
+                  <li><a href="reviews.php">Reviews</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Resources</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Policies</a></li>
+                  <li><a href="#">Terms of Service</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="contact.php">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Support</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">LinkedIn</a></li>
+                  <li><a href="#">Youtube</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3">
+                <h2 class="footer-heading mb-4">Company</h2>
+                <ul class="list-unstyled">
+                  <li><a href="home.html">About Us</a></li>
+                  <li><a href="home.html">Our Team</a></li>
+                  <li><a href="contact.php">Contact Us</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
- 
+    </footer>
+
     
 
       <!----------------
@@ -476,7 +476,7 @@
       };
 
       document.querySelector('.accbtn').addEventListener('click', function() {
-        window.location.href = 'accounts.html';
+        window.location.href = 'accounts.php';
       });
       </script>
 
