@@ -270,7 +270,7 @@
             echo '<div class="d-flex align-items-center">';
 
             // Check if the key exists and is not null before using it
-            if (isset($row["Profile_pic"]) && !is_null($row["Profile_pic"])) {
+            /*if (isset($row["Profile_pic"]) && !is_null($row["Profile_pic"])) {
                 $profilePic = $row["Profile_pic"];
                 echo '<img class="profile" src="' . $profilePic . '" alt="Image" class="img-fluid rounded-circle mr-3" style="height: 25px; width: auto;">';
             } else {
@@ -279,14 +279,14 @@
                 echo '<circle cx="12" cy="7" r="4"/>';
                 echo '<path d="M12 11c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm6 11h-12"/>';
                 echo '</svg>';
-            }
+            }*/
 
-            echo '<div class="author-name">';
-
-            // Check if the key exists before using it
+            echo '<div class="author-name row justify-content-center">';
             $Name = isset($row["name"]) ? $row["name"] : 'Unknown';
-            echo '<span class="d-block"> ' . $Name . ' </span>';
-
+            
+            // Modify this line to include bold, increased font size, and center it
+            echo '<span class="d-block"><b style="font-size: 19px;">' . $Name . '</b></span>';
+            
             echo '</div>';
             echo '</div>';
             echo '</div>';
