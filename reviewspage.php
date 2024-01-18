@@ -7,20 +7,20 @@
     <title>ImperialDrive | Reviews</title>
 
     <!----------------
-            FONTS
-      ----------------->
+          FONTS
+    ----------------->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!----------------
-          TAB ICON
-      ----------------->
+         TAB ICON
+    ----------------->
     <link rel="icon" href="./images/idlogo.png" type="image/x-icon">
 
     <!----------------
-         BOOTSTRAP CSS
-      ----------------->
+       BOOTSTRAP CSS
+    ----------------->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -30,8 +30,8 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <!----------------
-           MAIN CSS
-      ----------------->
+         MAIN CSS
+    ----------------->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -39,8 +39,8 @@
 
 <body>
     <!----------------
-            MY CSS
-      ----------------->
+          MY CSS
+    ----------------->
     <style>
         .site-navbar {
             position: fixed;
@@ -147,9 +147,14 @@
 
     
 
+    <!----------------
+      SECTION SECTION
+    ----------------->
+    <div class="site-wrap" id="home-section">
+
         <!----------------
-      CONTACT US SECTION
-      ----------------->
+          NAVIGATION BAR
+        ----------------->
         <div class="site-mobile-menu site-navbar-target">
             <div class="site-mobile-menu-header">
                 <div class="site-mobile-menu-close mt-3">
@@ -165,37 +170,32 @@
                     <div class="col-3">
                         <div class="site-logo">
                             <a href="home.html" class="d-flex align-items-center">
-                                <img src="./images/idlogo.png" alt="IDLogo" class="img-fluid col-3 zoom-out-image">
-                            </a>
+                            <img src="./images/idlogo.png" alt="IDLogo" class="img-fluid col-3 zoom-out-image"></a>
                         </div>
                     </div>
-                    <div class="col-9  text-center">
-                        <span class="d-inline-block d-lg-none"><a href="#"
-                                class=" site-menu-toggle js-menu-toggle py-5 "><span
-                                    class="icon-menu h3 text-black"></span></a></span>
-                        <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                            <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                                <li><a href="home.html" class="nav-link zoom-out-image"><b>Home</b></a></li>
-                                <li><a href="services.html" class="nav-link zoom-out-image"><b>Services</b></a></li>
-                                <li><a href="booking.html" class="nav-link zoom-out-image"><b>Booking</b></a></li>
-                                <li><a href="cars.html" class="nav-link zoom-out-image"><b>Cars</b></a></li>
-                                <li class="active"><a href="reviews.php"
-                                        class="nav-link zoom-out-image"><b><b>Reviews</b></b></a></li>
-                                <li style="margin-right: 215px;"><a href="contact.html"
-                                        class="nav-link zoom-out-image"><b>Contact Us</b></a></li>
-                                <li><button type="button" class="accbtn nav-link zoom-out-image"><i
-                                            class="fas fa-user"></i></button>
-                            </ul>
-                        </nav>
-                    </div>
+
+                <div class="col-9  text-center">
+                    <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 ">
+                    <span class="icon-menu h3 text-black"></span></a></span>
+                    <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                            <li><a href="home.html" class="nav-link zoom-out-image"><b>Home</b></a></li>
+                            <li><a href="services.php" class="nav-link zoom-out-image"><b>Services</b></a></li>
+                            <li><a href="booking.php" class="nav-link zoom-out-image"><b>Booking</b></a></li>
+                            <li><a href="carspage.php" class="nav-link zoom-out-image"><b>Cars</b></a></li>
+                            <li class="active"><a href="reviews.php" class="nav-link zoom-out-image"><b><b>Reviews</b></b></a></li>
+                            <li style="margin-right: 215px;"><a href="contact.php" class="nav-link zoom-out-image"><b>Contact Us</b></a></li>
+                            <li><button type="button" class="accbtn nav-link zoom-out-image"><i class="fas fa-user"></i></button>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </header>
 
 
         <!----------------
-          TOP LEVEL
-      ----------------->
+            TOP LEVEL
+        ----------------->
         <div class="hero inner-page" style="background-image: url('images/hero_1_a.jpg');">
             <div class="container">
                 <div class="row align-items-end ">
@@ -213,13 +213,13 @@
 
 
         <!----------------
-         IMPERIALDRIVE
-      ----------------->
+           IMPERIALDRIVE
+        ----------------->
         <div class="site-section">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
-                        <img src="images/reviewstop.jpg" alt="Image" class="img-fluid rounded">
+                        <img src="images/servicesection-booking.jpg" alt="Image" class="img-fluid rounded">
                     </div>
                     <div class="col-lg-5 mr-auto">
                         <h2><strong>ImperialDrive</strong></h2>
@@ -232,12 +232,13 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 
 
-        <!----------------
-             FORMS
-      ----------------->
+
+    <!----------------
+          FORMS
+    ----------------->
      <form action="reviews_condb.php" name="id_dtb" method="POST" enctype="multipart/form-data">
 
         <div class="site-section bg-light" id="review-section">
@@ -253,28 +254,25 @@
 
                 <div class="form-group row">
                     <div class="col-md-12">
-                        <textarea id="" class="form-control" name="review" placeholder="Write your review." cols="30"
-                            rows="22"></textarea>
+                        <textarea id="" class="form-control" name="review" placeholder="Write your review." cols="30" rows="22"></textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <input type="submit" name="insertSub"
-                            class="btn btn-block btn-primary text-white py-3 px-4 zoom-out-image" value="Submit Review">
+                        <input type="submit" name="insertSub" class="btn btn-block btn-primary text-white py-3 px-4 zoom-out-image" value="Submit Review">
                     </div>
                     <div class="col-md-6 ml-auto">
                         <a href="reviews.php" class="btn btn-block btn-primary text-white py-3 px-4 zoom-out-image">Cancel</a>
                     </div>
                 </div>
-
+            </div>
+        </div>
     </form>
-    </div>
-    </div>
 
 
     <!----------------
-          RENT SHRTCT
-      ----------------->
+        RENT SHRTCT
+    ----------------->
     <div class="site-section bg-primary py-5">
         <div class="container">
             <div class="row align-items-center">
@@ -284,7 +282,7 @@
                         dream ride and start exploring today.</p>
                 </div>
                 <div class="col-lg-5 text-md-right zoom-out-image">
-                    <a href="cars.html" class="btn btn-primary btn-white">Rent a car now</a>
+                    <a href="carspage.php" class="btn btn-primary btn-white">Rent a car now</a>
                 </div>
             </div>
         </div>
@@ -293,8 +291,8 @@
 
 
     <!----------------
-            FOOTER
-      ----------------->
+          FOOTER
+    ----------------->
     <footer class="site-footer">
         <div class="container">
             <div class="row">
@@ -309,10 +307,10 @@
                             <h2 class="footer-heading mb-4">Quick Links</h2>
                             <ul class="list-unstyled">
                                 <li><a href="home.html">About Us</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="booking.html">Booking</a></li>
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="reviews.html">Reviews</a></li>
+                                <li><a href="services.php">Services</a></li>
+                                <li><a href="booking.php">Booking</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="reviews.php">Reviews</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3">
@@ -322,7 +320,7 @@
                                 <li><a href="#">Policies</a></li>
                                 <li><a href="#">Terms of Service</a></li>
                                 <li><a href="#">Privacy</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="contact.php">Contact Us</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3">
@@ -339,8 +337,8 @@
                             <h2 class="footer-heading mb-4">Company</h2>
                             <ul class="list-unstyled">
                                 <li><a href="home.html">About Us</a></li>
-                                <li><a href="about.html">Our Team</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="#">Our Team</a></li>
+                                <li><a href="contact.php">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -352,13 +350,13 @@
 
 
     <!----------------
-            GO UP
-      ----------------->
+          GO UP
+    ----------------->
     <button onclick="scrollToTop()" id="scrollBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
     <!----------------
-            MY JS
-      ----------------->
+          MY JS
+    ----------------->
     <script>
         function scrollToTop() {
             const scrollDuration = 400; // Duration of the scroll animation in milliseconds
@@ -390,8 +388,8 @@
 
 
     <!----------------
-         BOOTSTRAP JS
-      ----------------->
+       BOOTSTRAP JS
+    ----------------->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -405,12 +403,8 @@
     <script src="js/aos.js"></script>
 
     <!----------------
-           MAIN JS
-      ----------------->
+          MAIN JS
+    ----------------->
     <script src="js/main.js"></script>
-
-    </form>
-
 </body>
-
 </html>
