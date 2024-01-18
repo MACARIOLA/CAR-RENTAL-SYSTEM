@@ -233,7 +233,7 @@ $result = mysqli_query($conn, $sql);
               ----------------->
               <div class="form-row">
                 <div class="col-12 mb-3">
-                  <h3 class="transaction-form-titles">Personal Information</h3>
+                  <h3 class="transaction-form-titles text-center">Personal Information</h3>
                 </div>
                 <div class="form-group col-md-4">
                   <input type="text" class="form-control" id="fname" placeholder="First Name" oninput="updateName()" required>
@@ -251,13 +251,13 @@ $result = mysqli_query($conn, $sql);
                   <input type="tel" class="form-control" id="phoneNo" placeholder="Phone No." oninput="updateName()" required />
                 </div>
 
-              <!----------------
-                 PICKUP INFO
-              ----------------->
+                <!----------------
+                  PICKUP INFO
+                ----------------->
                 </div>
                   <div class="form-row">
                     <div class="col-12 mt-3 mb-3">
-                      <h3 class="transaction-form-titles">Pickup Information</h3>
+                      <h3 class="transaction-form-titles text-center">Pickup Information</h3>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" class="form-control" id="p_province" placeholder="Province" oninput="updateName()" required>
@@ -268,18 +268,18 @@ $result = mysqli_query($conn, $sql);
                     <div class="form-group col-md-4">
                       <input type="text" class="form-control" id="p_zipcode" placeholder="ZipCode" oninput="updateName()" required>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 text-center mx-auto">
                       <label for="returnDateTime">Date/Time</label>
                     <input type="datetime-local" class="form-control" id="p_dateTime" oninput="updateName()" required>
                     </div>
                   </div>
 
-              <!----------------
-                 RETURN INFO
-              ----------------->
+                  <!----------------
+                    RETURN INFO
+                  ----------------->
                   <div class="form-row">
                     <div class="col-12 mt-3 mb-3">
-                      <h3 class="transaction-form-titles">Return Information</h3>
+                      <h3 class="transaction-form-titles text-center">Return Information</h3>
                     </div>
                     <div class="form-group col-md-4">
                       <input type="text" class="form-control" id="r_province" placeholder="Province" oninput="updateName()" required />
@@ -290,207 +290,136 @@ $result = mysqli_query($conn, $sql);
                     <div class="form-group col-md-4">
                       <input type="text" class="form-control" id="r_zipcode" placeholder="ZipCode" oninput="updateName()" required />
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 text-center mx-auto">
                       <label for="returnDateTime">Date/Time</label>
                       <input type="datetime-local" class="form-control" id="r_dateTime" oninput="updateName()" required />
                     </div>
                   </div>
 
-
-
-              <!----------------
-                PAYMENT METHOD
-              ----------------->
+                  <!----------------
+                    PAYMENT METHOD
+                  ----------------->
                   <div class="form-row">
                     <div class="col-12 mt-3 mb-3">
-                      <h3 class="transaction-form-titles">Payment Information</h3>
+                      <h3 class="transaction-form-titles text-center">Payment Method</h3>
                     </div>
-                    <div class="form-group col-md-12">
-                      <label>Payment Method</label><br>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="paymentMethod" id="cash" value="cash" checked>
-                            <label class="form-check-label" for="cash">Cash</label>
-                        </div>
-                        <div class="form-check form-check-inline">
+                    <div class="form-group col-md-12 text-center">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="cash" value="cash" checked>
+                          <label class="form-check-label" for="cash">Cash-On-Delivery</label>
+                      </div>
+                      <div class="form-check form-check-inline">
                           <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard">
-                            <label class="form-check-label" for="creditCard">Credit Card</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="paymentMethod" id="paypal" value="paypal">
-                            <label class="form-check-label" for="paypal">Paypal</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="paymentMethod" id="gcash" value="gcash">
-                            <label class="form-check-label" for="gcash">GCash</label>
-                        </div>
-                      </div>
-
-                      <div class="card-information-holder">
-                        <div id="creditCardFields" class="row form-group d-none p-1">
-                          <div class="col-12 cardTitle">
-                            <label for="cardNumber">Card Number</label>
-                          </div>
-                          <div class="col-3">
-                            <input type="text" placeholder="XXXX" class="form-control" id="cardNumber" required />
-                          </div>
-                          <div class="col-6">
-                            <input type="text" placeholder="XXXXXX" class="form-control" id="cardNumber" required />
-                          </div>
-                          <div class="col-3">
-                            <input type="text" placeholder="XXXXX" class="form-control" id="cardNumber" required />
-                          </div>
-                          <div class="col-8">
-                            <label for="expirationDate">Expiration Date</label>
-                            <input type="date" class="form-control" id="expirationDate" required />
-                          </div>
-                          <div class="col-4">
-                            <label for="cvc">CVC</label>
-                            <input type="text" class="form-control" placeholder="XXXX" id="cvc" required />
-                          </div>
-                          <div class="col-12">
-                            <label for="cardUserName">Name of Card User</label>
-                            <input type="text" class="form-control" id="cardUserName" required />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div id="mayaQrCodeFields" class="form-group col-md-12 d-none">
-                        <center>
-                          <div class="qrBox">
-                            <div class="mb-4">
-                              <h5><strong>GCash QR Code</strong></h5>
-                            </div>
-                            <img class="gcashQrCode zoom-out-image2" src="images/transactionsection_gcashQR.png">
-                          </div>
-                        </center>
-
-                        </div>
-                          <div id="gcashQrCodeFields" class="form-group col-md-12 d-none">
-                            <center>
-                              <div class="qrBox">
-                                <div class="mb-4">
-                                  <h5><strong>Paymaya QR Code</strong></h5>
-                                </div>
-                                <img class="mayaQrCode zoom-out-image2" src="images/transactionsection_mayaQR.png">
-                              </div>
-                            </center>
-                          </div>
-                        </div>
-
-                        <div class="mt-5">
-                          <div class="row">
-                            <div class="form-group col-md-12 d-flex justify-content-end">
-                              <a href="#"><button type="button" class="btn btn-outline-primary proceedbtn zoom-out-image2">Proceed</button></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-
-              <!----------------
-                  PICKED CAR
-              ----------------->
-                      <div class="col-md-6 col-lg-6 ">
-                        <div class="position-fixed">
-                          <div class="col-md-12 col-lg-12">
-                            <div class="car-list-card listing d-block align-items-stretch zoom-out-image">
-                              <div class="d-md-flex">
-                                <?php
-                                if(mysqli_num_rows($result) > 0) {
-                                 while($rows = mysqli_fetch_assoc($result)) { ?>
-                                <div class="listing-img h-100 mr-4">
-                                  <img src="<?php echo $rows['image']; ?>" alt="Image" class="img-fluid">
-                                </div>
-                                <div class="listing-contents h-100">
-                                  <h3><?php echo $rows["name"]; ?></h3>
-                                <div class="rent-price">
-                                  <strong>₱<?php echo $rows["price"]; ?></strong><span class="mx-1">/</span>day
-                                </div>
-                                <div class="d-block d-md-flex mb-3 border-bottom pb-3">
-                                  <div class="listing-feature pr-4">
-                                    <span class="caption">Body:</span>
-                                    <span class="number"><?php echo $rows["car_type"]; ?></span>
-                                  </div>
-                                  <div class="listing-feature pr-4">
-                                    <span class="caption">Doors:</span>
-                                    <span class="number"><?php echo $rows["doors"]; ?></span>
-                                  </div>
-                                  <div class="listing-feature pr-4">
-                                    <span class="caption">Passenger:</span>
-                                    <span class="number"><?php echo $rows["capacity"]; ?></span>
-                                  </div> 
-                                </div>
-                                <div>
-                                  <p class="text-justify"><?php echo $rows["information1"];?></p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-              <!----------------
-                    TICKET
-              ----------------->
-                        <div class="col-md-12 col-lg-12 zoom-out-image">
-                          <div class="ticket p-3">
-                            <div class="row ">
-                              <div class="col-6">
-                                <h2 class="ticket-price">PRICE: ₱<?php echo $rows["price"]; ?></h2>
-                                <?php
-                                  }
-                                }
-                                ?>
-                              </div>
-                              <div class="col-6">
-                                <h2 class="ticket-title">TICKET</h2>
-                              </div>
-                            </div>
-
-                            <table>
-                              <tr>
-                                <td id="custName_row">Customer:</td>
-                                <td class="ticket-text" id="cust_name"></div> </td>
-                              </tr>
-                            </table>
-
-                            <table>
-                              <tr>
-                                <td class="ticketLabel">Pickup Place:</td>
-                                <td class="location_row" id="pickup_province">Province</td>
-                                <td class="location_row" id="pickup_city">City</td>
-                                <td class="zipcode_row" id="pickup_zipcode">Zipcode</td>
-                              </tr>
-                              <tr>
-                                <td class="ticketLabel">Date/Time:</td>
-                                <td class="location_row" id="pickup_dateTime"></td>
-                              </tr>
-                              <tr>
-                                <td class="ticketLabel">Return Place:</td>
-                                <td class="location_row" id="return_province">Province</td>
-                                <td class="location_row" id="return_city">City</td>
-                                <td class="zipcode_row" id="return_zipcode">Zipcode</td>
-                              </tr>
-                              <tr>
-                                <td class="ticketLabel">Date/Time:</td>
-                                <td><div id="return_dateTime"></div></td>
-                              </tr>
-                            </table>
-                          </div>
-                        </div>
-
-                        <a href="carspage.php" class="back-button zoom-out-image2">Back</a>
-
+                          <label class="form-check-label" for="creditCard">Over-The-Counter</label>
                       </div>
                     </div>
+                  </div>
+                  <div class="mt-5">
+                    <div class="row justify-content-center">
+                      <div class="form-group col-md-12 d-flex justify-content-center">
+                        <a href="#"><button type="button" class="btn btn-outline-primary proceedbtn zoom-out-image2">Proceed</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!----------------
+                    PICKED CAR
+                ----------------->
+                <div class="col-md-6 col-lg-6 ">
+                  <div class="position-fixed">
+                    <div class="col-md-12 col-lg-12">
+                      <div class="car-list-card listing d-block align-items-stretch zoom-out-image">
+                        <div class="d-md-flex">
+                          <?php
+                            if(mysqli_num_rows($result) > 0) {
+                              while($rows = mysqli_fetch_assoc($result)) { 
+                          ?>
+                          <div class="listing-img h-100 mr-4">
+                            <img src="<?php echo $rows['image']; ?>" alt="Image" class="img-fluid zoom-out-image">
+                          </div>
+                          <div class="listing-contents h-100">
+                            <h3><?php echo $rows["name"]; ?></h3>
+                            <div class="rent-price">
+                              <strong>₱<?php echo $rows["price"]; ?></strong><span class="mx-1">/</span>Hours
+                            </div>
+                            <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                              <div class="listing-feature pr-4">
+                                <span class="caption">Body:</span>
+                                <span class="number"><?php echo $rows["car_type"]; ?></span>
+                              </div>
+                              <div class="listing-feature pr-4">
+                                <span class="caption">Doors:</span>
+                                <span class="number"><?php echo $rows["doors"]; ?></span>
+                              </div>
+                              <div class="listing-feature pr-4">
+                                <span class="caption">Passenger:</span>
+                                <span class="number"><?php echo $rows["capacity"]; ?></span>
+                              </div> 
+                            </div>
+                            <div>
+                              <p class="text-justify"><?php echo $rows["information1"];?></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!----------------
+                          TICKET
+                    ----------------->
+                    <div class="col-md-12 col-lg-12 zoom-out-image">
+                      <div class="ticket p-3">
+                        <div class="row ">
+                          <div class="col-6">
+                            <h2 class="ticket-price">PRICE: ₱<?php echo $rows["price"]; ?></h2>
+                            <?php }}?>
+                          </div>
+                        </div>
+
+                        <table>
+                          <tr>
+                            <td id="custName_row">Customer:</td>
+                            <td class="ticket-text" id="cust_name"></div> </td>
+                          </tr>
+                        </table>
+
+                        <table>
+                          <tr>
+                            <td class="ticketLabel">Pickup Place:</td>
+                            <td class="location_row" id="pickup_province">Province</td>
+                            <td class="location_row" id="pickup_city">City</td>
+                            <td class="zipcode_row" id="pickup_zipcode">Zipcode</td>
+                          </tr>
+                          <tr>
+                            <td class="ticketLabel">Date/Time:</td>
+                            <td class="location_row" id="pickup_dateTime"></td>
+                          </tr>
+                          <tr>
+                            <td class="ticketLabel">Return Place:</td>
+                            <td class="location_row" id="return_province">Province</td>
+                            <td class="location_row" id="return_city">City</td>
+                            <td class="zipcode_row" id="return_zipcode">Zipcode</td>
+                          </tr>
+                          <tr>
+                            <td class="ticketLabel">Date/Time:</td>
+                            <td><div id="return_dateTime"></div></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    
+                    <a href="carspage.php" class="back-button zoom-out-image2">Back</a>
                   </div>
                 </div>
               </div>
             </form>
           </div>
         </div>
-      </div>
-    </div>    
+      </form>
+    </div>
+  </div>
+ 
 
 
 
@@ -522,34 +451,6 @@ $result = mysqli_query($conn, $sql);
         document.getElementById("pickup_dateTime").textContent = " " + pdateTime;
         document.getElementById("return_dateTime").textContent = " " + rdateTime;
       }
-
-      document.querySelector('.card-information-holder').style.display = 'none';
-
-      document.querySelectorAll('input[name="paymentMethod"]').forEach((radio) => {
-        radio.addEventListener('change', () => {
-          if (document.getElementById('creditCard').checked) {
-            document.getElementById('creditCardFields').classList.remove('d-none');
-            document.getElementById('gcashQrCodeFields').classList.add('d-none');
-            document.getElementById('mayaQrCodeFields').classList.add('d-none');
-            document.querySelector('.card-information-holder').style.display = 'block';
-          } else if (document.getElementById('gcash').checked) {
-            document.getElementById('mayaQrCodeFields').classList.remove('d-none');
-            document.getElementById('creditCardFields').classList.add('d-none');
-            document.getElementById('gcashQrCodeFields').classList.add('d-none');
-            document.querySelector('.card-information-holder').style.display = 'none';
-          } else if (document.getElementById('paypal').checked) {
-            document.getElementById('gcashQrCodeFields').classList.remove('d-none');
-            document.getElementById('mayaQrCodeFields').classList.add('d-none');
-            document.getElementById('creditCardFields').classList.add('d-none');
-            document.querySelector('.card-information-holder').style.display = 'none';
-          } else {
-            document.getElementById('creditCardFields').classList.add('d-none');
-            document.getElementById('gcashQrCodeFields').classList.add('d-none');
-            document.getElementById('mayaQrCodeFields').classList.add('d-none');
-            document.querySelector('.card-information-holder').style.display = 'none';
-          }
-        });
-      });
     </script>
 
 
