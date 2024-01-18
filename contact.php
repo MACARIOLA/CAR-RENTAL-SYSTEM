@@ -329,12 +329,13 @@ require 'contactus.php';
       <!----------------
             FOOTER
       ----------------->
-    <footer class="site-footer">
+      <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
             <h2 class="footer-heading mb-4">About Us</h2>
-            <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey, your decision.</p>
+            <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey, your
+              decision.</p>
           </div>
           <div class="col-lg-8 ml-auto">
             <div class="row">
@@ -344,7 +345,7 @@ require 'contactus.php';
                   <li><a href="home.html">About Us</a></li>
                   <li><a href="services.php">Services</a></li>
                   <li><a href="booking.php">Booking</a></li>
-                  <li><a href="#">News</a></li>
+                  <li><a href="carspage.php">Cars</a></li>
                   <li><a href="reviews.php">Reviews</a></li>
                 </ul>
               </div>
@@ -372,7 +373,7 @@ require 'contactus.php';
                 <h2 class="footer-heading mb-4">Company</h2>
                 <ul class="list-unstyled">
                   <li><a href="home.html">About Us</a></li>
-                  <li><a href="#">Our Team</a></li>
+                  <li><a href="home.html">Our Team</a></li>
                   <li><a href="contact.php">Contact Us</a></li>
                 </ul>
               </div>
@@ -416,7 +417,7 @@ require 'contactus.php';
       };
 
       document.querySelector('.accbtn').addEventListener('click', function() {
-        window.location.href = 'accounts.html';
+        window.location.href = 'accounts.php';
       });
       </script>
 
