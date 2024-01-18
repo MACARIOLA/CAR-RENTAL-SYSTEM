@@ -1,0 +1,22 @@
+CREATE TABLE customers_tbl (
+    Customer_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Username VARCHAR(50) NOT NULL,
+    First_name VARCHAR(50) NOT NULL,
+    Last_name VARCHAR(50) NOT NULL,
+    Mi VARCHAR(50),
+    Email VARCHAR(50) NOT NULL,
+    Contact_number INT(11) NOT NULL,
+    Profile_pic BLOB,
+    Password VARCHAR(50) NOT NULL,
+    Retrieval_password VARCHAR(50)
+);
+
+CREATE TABLE reviews_tbl (
+    Review_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Customer_ID INT,
+    First_Name VARCHAR(50) NOT NULL,
+    Last_Name VARCHAR(50) NOT NULL,
+    Profile_Pic VARCHAR(255),
+    Customer_Comment TEXT NOT NULL,
+    FOREIGN KEY (Customer_ID) REFERENCES customers_tbl(Customer_ID)
+);
