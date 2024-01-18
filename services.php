@@ -247,9 +247,9 @@
       <div class="site-section bg-light">
         <div class="container">
           <div class="row">
-            <div class="col-lg-7">
-              <h2 class="section-heading"><strong>Featured Cars</strong></h2>
-              <p class="mb-5">Showcasing six car options with daily rates, easy picking your car for your adventure.</p>    
+            <div class="col-lg-12">
+              <h2 class="section-heading"><strong>Services</strong></h2>
+              <p class="mb-5">Embark on your journey with us – from self-drive adventures to seamless bookings and airport transfers. Your voyage, your way.</p>    
             </div>
           </div>
 
@@ -259,7 +259,7 @@
                   <img src="images/servicesection-selfdrive.jpg" alt="Image" class="img-fluid">
                 <div class="post-entry-1-contents">
                   <h2>Self Drive Car Rental</h2>
-                  <p>Take control of your adventure with our self-drive option—choose, hop in, and explore at your pace. <br>ㅤ</p>
+                  <p>Take control of your adventure with our self-drive option—choose, hop in, and explore at your own pace.<br>ㅤ</p>
                 </div>
               </div>
             </div>
@@ -269,8 +269,7 @@
                   <img src="images/servicesection-booking.jpg" alt="Image" class="img-fluid">
                 <div class="post-entry-1-contents">
                   <h2>Booking</h2>
-                  <p>Quickly reserve your ideal car with our user-friendly platform, starting your journey with a smooth
-                    process. Your journey begins with a smooth and efficient booking process.</p>
+                  <p>Quickly reserve your ideal car with our user-friendly platform, starting your journey smoothly. Your journey begins with a smooth and efficient booking process.</p>
                 </div>
               </div>
             </div>
@@ -280,7 +279,7 @@
                   <img src="images/servicesection-transaction.jpg" alt="Image" class="img-fluid">
                 <div class="post-entry-1-contents">
                   <h2>Transactions</h2>
-                  <p>Experience secure transactions on our platform, prioritizing your safety and privacy for a worry-free booking. <br>ㅤ</p>
+                  <p>Experience secure transactions on our platform, prioritizing your safety and privacy for a worry-free booking.<br>ㅤ</p>
                 </div>
               </div>
             </div>
@@ -290,7 +289,7 @@
                   <img src="images/servicesection-carlist.jpg" alt="Image" class="img-fluid">
                 <div class="post-entry-1-contents">
                   <h2>Our Car List</h2>
-                  <p>Discover your perfect ride from our diverse selection, whether a compact city car or spacious SUV. <br>ㅤ</p>
+                  <p>Discover your perfect ride from our diverse selection: a compact city car or a spacious SUV.<br>ㅤ</p>
                 </div>
               </div>
             </div>
@@ -300,7 +299,7 @@
                   <img src="images/servicesection-rentaldriver.jpg" alt="Image" class="img-fluid">
                 <div class="post-entry-1-contents">
                   <h2>Car Rental with Driver</h2>
-                  <p>Relax as our professional drivers navigate, ensuring a stress-free journey for scenery enjoyment or meetings. <br>ㅤ</p>
+                  <p>Relax as our professional drivers navigate, ensuring a stress-free journey for scenery enjoyment or meetings.<br>ㅤ</p>
                 </div>
               </div>
             </div>
@@ -310,7 +309,7 @@
                   <img src="images/servicesection-rentalairport.jpg" alt="Image" class="img-fluid">
                 <div class="post-entry-1-contents">
                   <h2>Airport Transfer Service</h2>
-                  <p>Say goodbye to travel worries with prompt airport transfers, offering a comfortable and efficient solution. <br>ㅤ</p>
+                  <p>Say goodbye to travel worries with prompt airport transfers, offering a comfortable and efficient solution.<br>ㅤ</p>
                 </div>
               </div>
             </div>
