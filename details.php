@@ -83,7 +83,7 @@ $result = mysqli_query($conn, $sql);
                   <li><a href="services.html" class="nav-link">Services</a></li>
                   <li><a href="booking.html" class="nav-link">Booking</a></li>
                   <li><a href="carspage.php" class="nav-link">Cars</a></li>
-                  <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                  <li><a href="reviews.php" class="nav-link">Reviews</a></li>
                   <li><a href="contact.php" class="nav-link">Contact Us</a></li>
                 </ul>
               </nav>
@@ -137,8 +137,7 @@ $result = mysqli_query($conn, $sql);
                 <br>
                 <div class="row">
                   <div class="col-md-8 blog-content">
-                    <p class="lead text-justify"><?php echo $rows["information"];?></p>
-                    <!-- <p class="text-justify">Inside, the spacious and meticulously crafted cabin offers a haven of comfort and convenience. Plush leather seats, advanced technology features, and a user-friendly infotainment system ensure that every journey is a pleasure. Whether you're navigating city streets or embarking on a long-distance road trip, the Buick LaCrosse provides a smooth and responsive ride, thanks to its powerful engine and refined suspension. Safety is a top priority in the Buick LaCrosse, with a comprehensive suite of advanced safety features and driver-assistance technologies. From adaptive cruise control to lane departure warning, the LaCrosse is equipped to keep you and your passengers secure on the road. Experience the epitome of luxury and performance with the Buick LaCrosse. Whether you're a discerning traveler or simply seeking a reliable and sophisticated vehicle, the Buick LaCrosse exceeds expectations and elevates every driving experience.</p> -->
+                    <p class="lead text-justify"><?php echo $rows["information2"];?></p>
                     <div class="pt-5"></div>
                   </div>
 
@@ -147,19 +146,20 @@ $result = mysqli_query($conn, $sql);
                       <div class="categories">
                         <h2>Categories</h2>
                         <br>
-                        <li><a href="#" style="font-size: 20px;">Ratings <span style="color: black; font-size: 20px;">4.8 Stars</span></a></li>
-                        <li><a href="#" style="font-size: 20px;">Body <span style="color: black; font-size: 20px;">MPV</span></a></li>
-                        <li><a href="#" style="font-size: 20px;">Doors <span style="color: black; font-size: 20px;">4</span></a></li>
-                        <li><a href="#" style="font-size: 20px;">Passenger <span style="color: black; font-size: 20px;"><?php echo $rows["doors"]; ?></span></a></li>
+                        <li><a href="#" style="font-size: 20px;">Body <span style="color: black; font-size: 20px;"><?php echo $rows["car_type"]; ?></span></a></li>
+                        <li><a href="#" style="font-size: 20px;">Doors <span style="color: black; font-size: 20px;"><?php echo $rows["doors"]; ?></span></a></li>
+                        <li><a href="#" style="font-size: 20px;">Capacity <span style="color: black; font-size: 20px;">4</span></a></li>
+                        <li><a href="#" style="font-size: 20px;">Passenger <span style="color: black; font-size: 20px;"><?php echo $rows["capacity"]; ?></span></a></li>
                         <?php
                         if($rows["capacity"] == 0){
                         ?>
                         <li><a href="#" style="font-size: 20px;">Availability <span class="text-danger" style="color: black; font-size: 20px;">Out of Stock</span></a></li>
+                        <li><a href="" style="font-size: 20px;"></a><p class="text-white"><a class="btn btn-primary btn-danger btn-sm zoom-out-image">Out of Stock</a></p></li>
                         <?php
                         }else{
                         ?>
-                        <li><a href="" style="font-size: 20px;">Availability <span class="text-success" style="color: black; font-size: 20px;"><?php echo $rows["capacity"]; ?> Cars</span></a></li>
-                        <li><a href="" style="font-size: 20px;"></a><p class="text-white"><a href="transaction.html" class="btn btn-primary btn-sm zoom-out-image">Book Now</a></p></li>
+                        <li><a href="" style="font-size: 20px;">Availability <span class="text-success" style="color: black; font-size: 20px;"><?php echo $rows["availability"]; ?> Cars</span></a></li>
+                        <li><a href="" style="font-size: 20px;"></a><p class="text-white"><a href="transaction.php?id=<?php echo $rows['car_id']; ?>" class="btn btn-primary btn-sm zoom-out-image">Book Now</a></p></li>
                         <?php
                         }
                         ?>
@@ -172,9 +172,6 @@ $result = mysqli_query($conn, $sql);
             </div>
           </div>
         </div>
-          
-        
-        
               <?php
                   }
                 }
@@ -191,7 +188,7 @@ $result = mysqli_query($conn, $sql);
               <p class="mb-0 opa-7">Ready to hit the road? Unleash your journey! Get behind the wheel of your dream ride and start exploring today.</p>
             </div>
             <div class="col-lg-5 text-md-right zoom-out-image">
-              <a href="cars.html" class="btn btn-primary btn-white">Rent a car now</a>
+              <a href="carspage.php" class="btn btn-primary btn-white">Rent a car now</a>
             </div>
           </div>
         </div>
@@ -224,7 +221,7 @@ $result = mysqli_query($conn, $sql);
                   <li><a href="#">Policies</a></li>
                   <li><a href="#">Terms of Service</a></li>
                   <li><a href="#">Privacy</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="contact.php">Contact Us</a></li>
                 </ul>
               </div>
               <div class="col-lg-3">
@@ -242,7 +239,7 @@ $result = mysqli_query($conn, $sql);
                 <ul class="list-unstyled">
                   <li><a href="home.html">About Us</a></li>
                   <li><a href="about.html">Our Team</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="contact.php">Contact Us</a></li>
                 </ul>
               </div>
             </div>
