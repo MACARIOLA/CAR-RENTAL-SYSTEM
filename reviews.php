@@ -7,20 +7,20 @@
   <title>ImperialDrive | Reviews</title>
 
   <!----------------
-            FONTS
-      ----------------->
+        FONTS
+  ----------------->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <!----------------
-          TAB ICON
-      ----------------->
+      TAB ICON
+  ----------------->
   <link rel="icon" href="./images/idlogo.png" type="image/x-icon">
 
   <!----------------
-         BOOTSTRAP CSS
-      ----------------->
+     BOOTSTRAP CSS
+  ----------------->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -32,15 +32,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!----------------
-           MAIN CSS
-      ----------------->
+       MAIN CSS
+  ----------------->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <!----------------
-          MY CSS
-    ----------------->
+       MY CSS
+  ----------------->
   <style>
     .site-navbar {
       position: fixed;
@@ -139,56 +139,51 @@
       height: 100%;
       flex-direction: column;
     }
-
-    .card-text{
-      flex-grow: 1;
-    }
   </style>
 
 
 
   <!----------------
-      REVIEW SECTION
-    ----------------->
+    SECTION SECTION
+  ----------------->
   <div class="site-wrap" id="home-section">
 
     <!----------------
-        NAVIGATION BAR
-      ----------------->
+      NAVIGATION BAR
+    ----------------->
     <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-header">          
         <div class="site-mobile-menu-close mt-3">
           <span class="icon-close2 js-menu-toggle"></span>
         </div>
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-
+    
     <header class="site-navbar site-navbar-target" role="banner">
       <div class="container">
         <div class="row align-items-center position-relative">
           <div class="col-3">
             <div class="site-logo">
               <a href="home.html" class="d-flex align-items-center">
-                <img src="./images/idlogo.png" alt="IDLogo" class="img-fluid col-3 zoom-out-image">
-              </a>
+                <img src="./images/idlogo.png" alt="IDLogo" class="img-fluid col-3 zoom-out-image"></a>
             </div>
           </div>
+            
           <div class="col-9  text-center">
-            <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span
-                  class="icon-menu h3 text-black"></span></a></span>
-            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-              <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                <li><a href="home.html" class="nav-link zoom-out-image"><b>Home</b></a></li>
-                <li><a href="services.html" class="nav-link zoom-out-image"><b>Services</b></a></li>
-                <li><a href="booking.html" class="nav-link zoom-out-image"><b>Booking</b></a></li>
-                <li><a href="carspage.php" class="nav-link zoom-out-image"><b>Cars</b></a></li>
-                <li class="active"><a href="reviews.php" class="nav-link zoom-out-image"><b><b>Reviews</b></b></a></li>
-                <li style="margin-right: 215px;"><a href="contact.php" class="nav-link zoom-out-image"><b>Contact
-                      Us</b></a></li>
-                <li><button type="button" class="accbtn nav-link zoom-out-image"><i class="fas fa-user"></i></button>
-              </ul>
-            </nav>
+            <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 ">
+            <span class="icon-menu h3 text-black"></span></a></span>
+              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                  <li><a href="home.html" class="nav-link zoom-out-image"><b>Home</b></a></li>
+                  <li><a href="services.php" class="nav-link zoom-out-image"><b>Services</b></a></li>
+                  <li><a href="booking.php" class="nav-link zoom-out-image"><b>Booking</b></a></li>
+                  <li><a href="carspage.php" class="nav-link zoom-out-image"><b>Cars</b></a></li>
+                  <li class="active"><a href="reviews.php" class="nav-link zoom-out-image"><b><b>Reviews</b></b></a></li>
+                  <li style="margin-right: 215px;"><a href="contact.php" class="nav-link zoom-out-image"><b>Contact Us</b></a></li>
+                  <li><button type="button" class="accbtn nav-link zoom-out-image"><i class="fas fa-user"></i></button>
+                </ul>
+              </nav>
           </div>
         </div>
       </div>
@@ -197,8 +192,8 @@
 
 
     <!----------------
-          TOP LEVEL
-      ----------------->
+        TOP LEVEL
+    ----------------->
     <div class="hero inner-page" style="background-image: url('images/hero_1_a.jpg');">
       <div class="container">
         <div class="row align-items-end ">
@@ -217,13 +212,13 @@
 
 
     <!----------------
-         IMPERIALDRIVE
-      ----------------->
+       IMPERIALDRIVE
+    ----------------->
     <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5 mb-lg-0 order-lg-2">
-            <img src="images/reviewstop.jpg" alt="Image" class="img-fluid rounded">
+            <img src="images/servicesection-booking.jpg" alt="Image" class="img-fluid rounded">
           </div>
           <div class="col-lg-5 mr-auto">
             <h2><strong>ImperialDrive</strong></h2>
@@ -240,10 +235,11 @@
     </div>
   </div>
 
-  <!----------------
-         TESTIMONIALS
-      ----------------->
 
+
+  <!----------------
+     TESTIMONIALS
+  ----------------->
   <div class="site-section bg-light">
     <div class="container">
       <div class="row">
@@ -253,57 +249,54 @@
         </div>
       </div>
   
-      <?php
-              $conn = mysqli_connect('localhost', 'root', '', 'id_dtb');
-          
-              if (!$conn) {
-                  die("Connection failed: " . mysqli_connect_error());
-              }
-              ?>
-  
       <div class="row">
-  
         <?php
-                // Fetch the latest 9 testimonials from the database
-                $sql = "SELECT * FROM reviews_tbl ORDER BY Review_ID DESC LIMIT 9";
-                $result = mysqli_query($conn, $sql);
-                // Display up to 9 testimonials
-                $reviewCounter = 0;
-                while ($row = mysqli_fetch_assoc($result)) {
-                ?>
   
-        <div class="col-md-4 col-6 gy-4">
-          <div class="card testimonial-2 zoom-out-image">
-            <center>
-              <?php echo '<img class="profile img-fluid rounded-circle mr-3 center" src="' . $row["Profile_pic"] . '" alt="Image" 
-                style="height: 75px; width: auto;">'; ?>
-            </center>
-            <div class="card-body">
-              <blockquote class="mb-4 text-justify">
-                <p>
-                  "<?php echo $row["Customer_Comment"]; ?>"
-                </p>
-              </blockquote>
-            </div>
-            <div class="text-end"> -
-              <?php echo $row["First_name"]; ?>
-              <?php echo $row["Last_name"]; ?>
-            </div>
-          </div>
-        </div>
-        <?php $reviewCounter++; } ?>
-      </div> <!-- Close the row -->
-    </div> <!-- Close the container -->
-  </div> <!-- Close the site-section --> 
-  
-  <?php
-  // Close the result set
-  mysqli_free_result($result);
-  
-  // Close the database connection
-  mysqli_close($conn);
-  ?>
-        <!----------------
+          $conn = mysqli_connect('localhost', 'root', '', 'id_dtb');
+    
+          if (!$conn) {
+              die("Connection failed: " . mysqli_connect_error());
+          }
+    
+          $sql = "SELECT * FROM reviews_tbl ORDER BY Review_ID DESC LIMIT 9";
+          $result = mysqli_query($conn, $sql);
+    
+          $reviewCounter = 0;
+          while ($row = mysqli_fetch_assoc($result)) {
+            echo '<div class="col-lg-4 mb-4">';
+            echo '<div class="card testimonial-2 zoom-out-image">';
+            echo '<blockquote class="mb-4 text-justify">';
+            echo '<p>"' . $row['Customer_Comment'] . '"</p>';
+            echo '</blockquote>';
+    
+            echo '<div class="card-body">';
+            echo '<div class="d-flex align-items-center">';
+            echo '<img class="profile" src="' . $row["Profile_pic"] . '" alt="Image" class="img-fluid rounded-circle mr-3" style="height: 55px; width: auto;">';
+            echo '<div class="author-name">';
+            echo '<span class="d-block"> ' . $row["First_name"] . ' ' . $row["Last_name"] . ' </span>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            
+            echo '</div>';
+            echo '</div>';
+    
+            $reviewCounter++;
+          }
+    
+          echo '</div>'; 
+          
+          echo '</div>'; 
+          echo '</div>'; 
+      
+          mysqli_free_result($result);
+      
+          mysqli_close($conn);
+        ?>
+
+
+
+      <!----------------
         REVIEW SHRTSCT
       ----------------->
         <div class="site-section bg-primary py-5">
@@ -324,17 +317,15 @@
 
 
 
-        <!----------------
-            FOOTER
+      <!----------------
+           FOOTER
       ----------------->
         <footer class="site-footer">
           <div class="container">
             <div class="row">
               <div class="col-lg-3">
                 <h2 class="footer-heading mb-4">About Us</h2>
-                <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey,
-                  your
-                  decision.</p>
+                <p>Where choice meets convenience. Rent a car and take the wheel or opt for a driver — your journey, your decision.</p>
               </div>
               <div class="col-lg-8 ml-auto">
                 <div class="row">
@@ -342,9 +333,9 @@
                     <h2 class="footer-heading mb-4">Quick Links</h2>
                     <ul class="list-unstyled">
                       <li><a href="home.html">About Us</a></li>
-                      <li><a href="services.html">Services</a></li>
-                      <li><a href="booking.html">Booking</a></li>
-                      <li><a href="news.html">News</a></li>
+                      <li><a href="services.php">Services</a></li>
+                      <li><a href="booking.php">Booking</a></li>
+                      <li><a href="#">News</a></li>
                       <li><a href="reviews.php">Reviews</a></li>
                     </ul>
                   </div>
@@ -372,7 +363,7 @@
                     <h2 class="footer-heading mb-4">Company</h2>
                     <ul class="list-unstyled">
                       <li><a href="home.html">About Us</a></li>
-                      <li><a href="about.html">Our Team</a></li>
+                      <li><a href="#">Our Team</a></li>
                       <li><a href="contact.php">Contact Us</a></li>
                     </ul>
                   </div>
@@ -384,12 +375,12 @@
 
 
 
-        <!----------------
+      <!----------------
             GO UP
       ----------------->
         <button onclick="scrollToTop()" id="scrollBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
-        <!----------------
+      <!----------------
             MY JS
       ----------------->
         <script>
@@ -420,7 +411,7 @@
           });
         </script>
 
-        <!----------------
+      <!----------------
          BOOTSTRAP JS
       ----------------->
         <script src="js/jquery-3.3.1.min.js"></script>
@@ -435,10 +426,9 @@
         <script src="js/bootstrap-datepicker.min.js"></script>
         <script src="js/aos.js"></script>
 
-        <!----------------
+      <!----------------
            MAIN JS
       ----------------->
         <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>
