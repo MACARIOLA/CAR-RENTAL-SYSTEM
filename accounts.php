@@ -349,7 +349,7 @@ if (isset($_SESSION["Username"])) {
         ----------------->
         <div id="body">
             <div class="button">
-        <a href="javascript:history.go(-1);" style="text-decoration: none; color: white;">
+        <a href="home.html" style="text-decoration: none; color: white;">
             <div id="Back" class="zoom-out-image2">Back</div>
         </a>
         <a href="login.php" style="text-decoration: none; color: white;">
