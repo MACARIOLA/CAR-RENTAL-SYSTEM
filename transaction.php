@@ -303,11 +303,11 @@ if(isset($_GET["id"])){
                     </div>
                     <div class="form-group col-md-12 text-center">
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="cash" value="cash" checked>
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="cash" value="COD" checked>
                           <label class="form-check-label" for="cash">Cash-On-Delivery</label>
                       </div>
                       <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard">
+                          <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="OTC">
                           <label class="form-check-label" for="creditCard">Over-The-Counter</label>
                       </div>
                     </div>
@@ -315,7 +315,8 @@ if(isset($_GET["id"])){
                   <div class="mt-5">
                     <div class="row justify-content-center">
                       <div class="form-group col-md-12 d-flex justify-content-center">
-                        <a href="carspage.php"><button class="btn btn-outline-primary proceedbtn zoom-out-image2" name="confirm">Proceed</button></a>
+                      <a href="carspage.php"><button class="btn btn-outline-primary proceedbtn zoom-out-image2" name="confirm" id="proceedBtn">Proceed</button></a>
+                      
                       </div>
                     </div>
                   </div>
@@ -454,6 +455,16 @@ if(isset($_GET["id"])){
         document.getElementById("pickup_dateTime").textContent = " " + pdateTime;
         document.getElementById("return_dateTime").textContent = " " + rdateTime;
       }
+
+      document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('proceedBtn').addEventListener('click', function () {
+        // Your form submission logic here (if needed)
+        document.getElementById('transactionForm').submit();
+
+        // Redirect to the desired page
+        window.location.href = 'carspage.php';
+      });
+    });
     </script>
 
 
